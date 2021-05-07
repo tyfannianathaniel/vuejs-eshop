@@ -27,6 +27,9 @@
         - to edit default package manager: `npx vue config -s packageManager <yarn|npm>`
     - test project: `yarn serve`
 
+- connect github with vscode
+    - ??
+
 - push the initialized project
     - update .gitignore to ignore codium workspaces and emacs temp files: `printf "*~\n.\#*\#\n*.code-workspace" >> .gitignore`
     - check untracked dirs and files: `git status`
