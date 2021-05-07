@@ -48,14 +48,18 @@
 
 ### install Vue Router
 
+- install Vue Router: `npx vue add router`
+    - -> using the above command adds the router to the existing project
+    - -> using `npm i vue-router` does not adapt to the project
 - doc: https://router.vuejs.org/installation.html
 
 ### install Vuex
 
+- not now!
 - doc: https://vuex.vuejs.org/
-- install vue-router: `vue add router`
-- install vuex: ``
 
 ## development
+
+
 
 - Awesome-vue: https://github.com/vuejs/awesome-vue
