@@ -27,8 +27,11 @@
         - to edit default package manager: `npx vue config -s packageManager <yarn|npm>`
     - test project: `yarn serve`
 
-- connect github with vscode
-    - ??
+- connect github with codium
+    - automatic signing to github does not work with codium (forbidden authentication or eror 801)
+    - it is necessary to use a workaround:
+        - go to https://github.com/settings/tokens
+        - generate a new token test
 
 - push the initialized project
     - update .gitignore to ignore codium workspaces and emacs temp files: `printf "*~\n.\#*\#\n*.code-workspace" >> .gitignore`
