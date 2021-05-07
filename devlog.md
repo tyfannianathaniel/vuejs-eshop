@@ -31,12 +31,14 @@
     - automatic signing to github does not work with codium (forbidden authentication or error 801)
     - it is necessary to use an ugly workaround:
         - disconnect from github first
-        - open this link where vscodium has been replaced by vscode and click to 'continue': https://vscode-auth.github.com/authorize/?callbackUri=vscode://vscode.github-authentication/did-authenticate%253FwindowId%253D1&scope=repo%20workflow&state=4581d083-208b-4e54-bb1c-54036727b4ae&responseType=code&authServer=https://github.com
+        - open this link where `vscodium` has been replaced by `vscode` and click to 'continue': https://vscode-auth.github.com/authorize/?callbackUri=vscode://vscode.github-authentication/did-authenticate%253FwindowId%253D1&scope=repo%20workflow&state=4581d083-208b-4e54-bb1c-54036727b4ae&responseType=code&authServer=https://github.com
         - reconnect from github via the displayed form
         - the redirection fails but you should be able to copy the token
-        - go back to codium, click on 'sign with github' in the toolbar at the bottom of the window
-        - copy the token in the appropriate field
+        - switch back to VS code.
+        - click `Signing in to github.com...` in the status bar.
+        - paste the token and hit enter.
         - that sucks. But it works.
+
     - -> solution: https://github.com/VSCodium/vscodium/issues/401
     - -> solution: https://github.com/microsoft/vscode-pull-request-github/issues/1778
     - -> il doit être possible de générer un token pour codium ici: https://github.com/settings/tokens
