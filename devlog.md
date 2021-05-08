@@ -9,6 +9,7 @@
         - [install Vue Router](#install-vue-router)
         - [install Vuex](#install-vuex)
     - [development](#development)
+        - [setup dumb product store](#setup-dumb-product-store)
 
 <!-- /TOC -->
 
@@ -25,6 +26,7 @@
     - init vue project: `npx vue create .`
         - select Default (Vue3 Preview) preset
         - to edit default package manager: `npx vue config -s packageManager <yarn|npm>`
+    - remove package-lock.json: `rm ./package-lock.json` (since we use yarn with vue-cli)
     - test project: `yarn serve`
 
 - connect github with codium
@@ -71,11 +73,14 @@
 
 ### install Vuex
 
-- not now!
+- install Vuex: `npx vue add vuex`
+    - -> using the above command adds Vuex to the existing project
+    - -> using `npm i vuex` does not adapt to the project
 - doc: https://vuex.vuejs.org/
 
 ## development
 
+### setup dumb product store
 
 
 - Awesome-vue: https://github.com/vuejs/awesome-vue

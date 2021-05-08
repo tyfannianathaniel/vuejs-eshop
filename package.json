@@ -2,7 +2,7 @@
   "name": "vuejs-eshop",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "<!-- TOC -->",
   "author": {
     "name": "bbenti",
     "email": "baptiste@benti.fr"
@@ -17,10 +17,11 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@vue/cli": "^4.1.2",
+    "@vue/cli": "^4.5.13",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -50,7 +51,15 @@
     "not dead"
   ],
   "_id": "vuejs-eshop@1.0.0",
+  "bugs": {
+    "url": "https://github.com/BaptisteBenti/vuejs-eshop/issues"
+  },
+  "homepage": "https://github.com/BaptisteBenti/vuejs-eshop#readme",
   "keywords": [],
   "license": "GPLv3",
-  "readme": "ERROR: No README data found!"
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaptisteBenti/vuejs-eshop.git"
+  }
 }
