@@ -4,12 +4,12 @@
 
 - [devlog](#devlog)
     - [init VueJs project](#init-vuejs-project)
-    - [install project dependencies](#install-project-dependencies)
-        - [install Vue DevTools](#install-vue-devtools)
-        - [install Vue Router](#install-vue-router)
-        - [install Vuex](#install-vuex)
+    - [install Vue DevTools / Vue Router / Vuex](#install-vue-devtools--vue-router--vuex)
+        - [Vue DevTools:](#vue-devtools)
+        - [Vue Router](#vue-router)
+        - [Vuex](#vuex)
     - [development](#development)
-        - [setup dumb product store](#setup-dumb-product-store)
+        - [create a catalog page](#create-a-catalog-page)
 
 <!-- /TOC -->
 
@@ -56,7 +56,7 @@
 
 ## install Vue DevTools / Vue Router / Vuex
 
-For each dependency, choose the version compatible with vuejs 3 :
+For each dependency, choose the version compatible with Vuejs v3.x :
 
 ### Vue DevTools:
 
@@ -70,7 +70,7 @@ For each dependency, choose the version compatible with vuejs 3 :
 - add a router to the current project: `npx vue add router`
 - -> doc: https://next.router.vuejs.org/installation.html
 
-### install Vuex
+### Vuex
 
 - install Vuex: `yarn add vuex@next`
 - add a store to the current project: `npx vue add vuex`
@@ -78,7 +78,43 @@ For each dependency, choose the version compatible with vuejs 3 :
 
 ## development
 
-### setup dumb product store
+### create a catalog page
 
+- basculer sur une nouvelle branche locale: `git checkout -b catalog`
+- créer une nouvelle route en ajoutant l'objet suivant au tableau routes dans @/router/index.js:
+    ```js
+    {
+        path: '/catalog',
+        name: 'Catalog',
+        component: () => import('@/views/Catalog.vue')
+    },
+    ```
+- créer la vue Catalog.vue dans le répertoire @/views:
+    ```js
+    <template>
+    <div class="catalog">
+        <h1>This is a catalog page</h1>
+    </div>
+    </template>
+
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style>
+
+    </style>
+    ```
+- ajouter un lien vers la page depuis @/App.vue:
+    ```js
+    <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/catalog">Catalog</router-link> |
+        <router-link to="/about">About</router-link>
+    </div>
+    ```
 
 - Awesome-vue: https://github.com/vuejs/awesome-vue

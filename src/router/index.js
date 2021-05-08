@@ -8,6 +8,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/catalog',
+    name: 'Catalog',
+    component: () => import('@/views/Catalog.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
@@ -23,3 +28,4 @@ const router = createRouter({
 })
 
 export default router
+
