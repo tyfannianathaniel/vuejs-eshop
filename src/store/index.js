@@ -3,11 +3,13 @@ import catalog from '@/api/products'
 
 export default createStore({
   state: {
-    products: []
+    products: [],
+    total: null,
   },
   mutations: {
     setProducts(state, products) {
       state.products = products
+      state.total = products.length
     }
   },
   actions: {

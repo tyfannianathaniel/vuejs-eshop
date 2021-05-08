@@ -4,15 +4,22 @@
     </div>
 
     <div v-else>
-        <p>/ display product number /</p>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <aside class="d-flex justify-content-between ">
+            <div>
+                <p class="text-start p-1"><span class="badge bg-secondary">{{total}}</span> Produits</p>
+            </div>
+            <div>
+                // filters
+            </div>
+        </aside>
+        <main class="mb-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div
                 v-for="product of products"
                 :key="product.id"
                 class="col-sm-6"
             >
                 <div class="card">
-                <span class="badge bg-warning position-absolute top-0 start-100">{{product.price}}</span>
+                <span class="badge badge-card bg-warning position-absolute top-0 start-100">{{product.price}}</span>
                 <img :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
                 <div class="card-body">
                     <h5 class="card-title">{{product.brand}}</h5>
@@ -20,7 +27,7 @@
                 </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
 </template>
@@ -35,6 +42,9 @@ export default {
     computed: {
         products() {
             return this.$store.state.products
+        },
+        total() {
+            return this.$store.state.total
         }
     },
     methods: {
@@ -51,12 +61,12 @@ export default {
 </script>
 
 <style scoped>
-.badge {
+.badge-card {
     padding: .4rem;
     color: black;
     transform: translate(calc(-100% - .5rem), .5rem);
 }
-.badge::after{
+.badge-card::after{
     content:" €"
 }
 </style>
