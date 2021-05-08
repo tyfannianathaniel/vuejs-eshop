@@ -39,7 +39,6 @@
         - switch back to VS code.
         - click `Signing in to github.com...` in the status bar.
         - paste the token and hit enter.
-        - that sucks. But it works.
 
     - -> solution: https://github.com/VSCodium/vscodium/issues/401
     - -> solution: https://github.com/microsoft/vscode-pull-request-github/issues/1778
@@ -55,28 +54,27 @@
     - rename master branch: `git branch -m main` (this can't be done before the first commit)
     - push: `git push -u origin main`
 
-## install project dependencies
+## install Vue DevTools / Vue Router / Vuex
 
-### install Vue DevTools
+For each dependency, choose the version compatible with vuejs 3 :
+
+### Vue DevTools:
 
 - install Vue DevTools (beta: 6.0.0) extension for Firefox by downloading xpi file from repo: https://github.com/vuejs/vue-devtools/releases/
-    - -> we must use beta version with VueJs 3x or it doesn't work
-    - -> doc: https://devtools.vuejs.org/guide/installation.html#beta
 - check if it works by starting the project in firefox and opening the dev console (f12) ; the Vue tab must appears! Restart the browser if necessary
+- -> doc: https://devtools.vuejs.org/guide/installation.html#beta
 
-### install Vue Router
+### Vue Router
 
-- install Vue Router: `npx vue add router`
-    - -> using the above command adds the router to the existing project
-    - -> using `npm i vue-router` does not adapt to the project
-- doc: https://router.vuejs.org/installation.html
+- install Vue Router: `yarn add vue-router@4`
+- add a router to the current project: `npx vue add router`
+- -> doc: https://next.router.vuejs.org/installation.html
 
 ### install Vuex
 
-- install Vuex: `npx vue add vuex`
-    - -> using the above command adds Vuex to the existing project
-    - -> using `npm i vuex` does not adapt to the project
-- doc: https://vuex.vuejs.org/
+- install Vuex: `yarn add vuex@next`
+- add a store to the current project: `npx vue add vuex`
+- -> doc: https://next.vuex.vuejs.org/installation.html
 
 ## development
 
