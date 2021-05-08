@@ -18,10 +18,12 @@ Click to [see a live demo](#) hosted on heroku
 
 ### Functionalities
 
-- [ ] afficher les produits en base
+- [X] afficher les produits en base
+- [ ] afficher le nombre total de produits
 - [ ] filtrer les produits par prix
 - [ ] filtrer les produits par disponibilité
 - [ ] ajouter un produit au panier
+- [ ] ajouter un niveau de loading au niveau de chaque produit
 
 - [ ] créer un compte client
 - [ ] se connecter à son compte client

@@ -4,7 +4,9 @@
     <router-link to="/catalog">Catalog</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
+  <div class="container">
+    <router-view/>
+  </div>
 </template>
 
 <style>

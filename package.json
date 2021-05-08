@@ -15,7 +15,11 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0",
     "core-js": "^3.6.5",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
     "vue": "^3.0.0",
     "vue-router": "4",
     "vuex": "^4.0.0"
