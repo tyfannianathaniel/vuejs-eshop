@@ -30,7 +30,7 @@
     - test project: `yarn serve`
 
 - connect github with codium
-    - automatic signing to github does not work with codium (forbidden authentication or error 801)
+    - the automatic connection on github does not work with codium (forbidden authentication or error 801)
     - it is necessary to use an ugly workaround:
         - disconnect from github first
         - open this link where `vscodium` has been replaced by `vscode` and click to 'continue': https://vscode-auth.github.com/authorize/?callbackUri=vscode://vscode.github-authentication/did-authenticate%253FwindowId%253D1&scope=repo%20workflow&state=4581d083-208b-4e54-bb1c-54036727b4ae&responseType=code&authServer=https://github.com

@@ -13,7 +13,7 @@
 
 ## Scope
 
-The objective of this project is to learn how to use VueJs through the partial construction of an e-commerce site.
+The objective of this project is to learn how to use VueJs 3 through the partial construction of an e-commerce site.
 Click to [see a live demo](#) hosted on heroku
 
 ### Functionalities
