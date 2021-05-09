@@ -13,19 +13,22 @@
             </div>
         </aside>
         <main class="mb-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <div
-                v-for="product of products"
-                :key="product.id"
-                class="col-sm-6"
-            >
-                <div class="card">
-                <span class="badge badge-card bg-warning position-absolute top-0 start-100">{{product.price}}</span>
-                <img :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.brand}}</h5>
-                    <p class="card-text">{{product.title}}</p>
-                </div>
-                </div>
+                <div
+                    v-for="product of products"
+                    :key="product.id"
+                    class="col-sm-6"
+                >
+
+                    <div class="card">
+                    <span class="badge badge-card bg-warning position-absolute top-0 start-100">{{product.price}}</span>
+                    <img :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.brand}}</h5>
+                        <router-link class="stretched-link text-decoration-none text-reset" :to="{name: 'Products', params: {id: product.id}}">
+                            <p class="card-text">{{product.title}}</p>
+                        </router-link>
+                    </div>
+                    </div>
             </div>
         </main>
     </div>
@@ -45,12 +48,12 @@ export default {
         },
         total() {
             return this.$store.state.total
-        }
+        },
     },
     methods: {
         concatImgSrc(product) {
             return `./assets/images/${product.images[0].filename}`
-        }
+        },
     },
     created() {
         this.$store.dispatch('fetchProducts').then(

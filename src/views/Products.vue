@@ -1,0 +1,5 @@
+<template>
+  <div class="about">
+    <h1>This is a product page. Product ID: {{$route.params.id}}</h1>
+  </div>
+</template>
