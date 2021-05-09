@@ -4,7 +4,6 @@
 
 - [vuejs-eshop](#vuejs-eshop)
     - [Scope](#scope)
-        - [Functionalities](#functionalities)
     - [Built With :heart: using](#built-with-heart-using)
     - [Developer routine](#developer-routine)
     - [License](#license)
@@ -16,41 +15,15 @@
 The objective of this project is to learn how to use VueJs 3 through the partial construction of an e-commerce site.
 Click to [see a live demo](#) hosted on heroku
 
-### Functionalities
-
-- [X] afficher les produits en base
-- [ ] afficher le nombre total de produits
-- [ ] filtrer les produits par prix
-- [ ] filtrer les produits par disponibilité
-- [ ] ajouter un produit au panier
-- [ ] ajouter un niveau de loading au niveau de chaque produit
-
-- [ ] créer un compte client
-- [ ] se connecter à son compte client
-- [ ] se déconnecter de son compte client
-- [ ] supprimer son compte client
-- [ ] afficher ses données personnelles
-- [ ] modifier ses données personnelles
-- [ ] télécharger ses données personnelles
-- [ ] voir son panier sauvegardé
-
-- [ ] afficher la fiche produit
-- [ ] modifier la quantité à ajouter au panier
-
-- [ ] afficher/masquer le panier d'achat
-- [ ] modifier la quantité d'un produit dans le panier
-- [ ] supprimer un produit du panier
-
-- [ ] accéder à l'interface administrateur
-- [ ] afficher la liste des clients
-- [ ] afficher la liste des produits
-
 ## Built With :heart: using
 
-- [lorem ipsum](#)
-- [dolor sit amet](#)
-- VueJs
-- Bootstrap
+- [VueJs](#)
+    - [Vue Cli](#)
+    - [Vue Router](#)
+    - [Vuex](#)
+- [Bootstrap](#)
+- [Sass](#)
+- [Webpack](#)
 
 ------------------------------------------------------------------------------------------------
 
