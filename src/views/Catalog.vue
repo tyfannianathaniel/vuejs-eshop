@@ -5,9 +5,10 @@
     <Spinner v-if="isLoading"/>
 
     <div v-else>
-      <ProductStatusBar />
-      <ProductGrid  />
+      <ProductStatusBar @sortBy="sortBy"/>
+      <ProductGrid :filter="filter" />
     </div>
+
 
   </div>
 </template>
@@ -27,13 +28,19 @@ export default {
   },
   data() {
     return {
-        isLoading: true
+        isLoading: true,
+        filter: 'foo'
     }
   },
   created() {
       this.$store.dispatch('fetchProducts').then(
           () => this.isLoading = false
       )
+  },
+  methods: {
+    sortBy(event) {
+      this.filter = event
+    }
   },
 }
 

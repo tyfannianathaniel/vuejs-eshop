@@ -26,18 +26,63 @@
 <script>
 
 export default {
+    props: {
+        'filter' : String,
+    },
     computed: {
         products() {
-            return this.$store.state.products
+            let products = this.$store.state.products
+
+            switch (this.filter) {
+                case "our-selection":
+                    return this.sortByAscendingId(products)
+                case "price-ascending":
+                    return this.sortByAscendingPrice(products)
+                case "price-descending":
+                    return this.sortByDescendingPrice(products)
+                case "brand-name":
+                    return this.sortByAlphabeticalBrandName(products)
+                default:
+                    return this.$store.state.products
+            }
         },
     },
     methods: {
         concatImgSrc(product) {
             return `./assets/images/${product.images[0].filename}`
         },
+        sortByAscendingPrice(products) {
+            return products.sort( (a, b) => {
+                return a.price - b.price
+            })
+        },
+        sortByAscendingId(products) {
+            return products.sort( (a, b) => {
+                return a.id - b.id
+            })
+        },
+        sortByDescendingPrice(products) {
+            return products.sort( (a, b) => {
+                return b.price - a.price
+            })
+        },
+        sortByAlphabeticalBrandName(products) {
+            return products.sort( (a, b) => {
+
+                let aBrand = a.brand.toLowerCase()
+                let bBrand = b.brand.toLowerCase()
+
+                if ( aBrand < bBrand ) {
+                    return -1
+                }
+                if ( aBrand > bBrand ) {
+                    return 1
+                }
+                return 0
+            })
+        },
     },
 }
-
 </script>
 
 <style scoped>

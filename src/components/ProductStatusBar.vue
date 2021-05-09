@@ -1,10 +1,17 @@
 <template>
-    <aside class="d-flex justify-content-between ">
+    <aside class="d-flex pb-3 justify-content-between ">
         <div>
-            <p class="text-start p-1"><span class="badge bg-secondary">{{total}}</span> Produits</p>
+            <p class="text-start"><span class="badge bg-secondary">{{total}}</span> Produits</p>
         </div>
         <div>
-            // filters
+            <form action="">
+                <select @change="sortBy(event)" class="form-select form-select-sm" aria-label="select 'sort by' filter">
+                    <option selected value="our-selection">Our Selection </option>
+                    <option value="price-ascending">Price (ascending)</option>
+                    <option value="price-descending">Price (descending)</option>
+                    <option value="brand-name">Brand Name</option>
+                </select>
+            </form>
         </div>
     </aside>
 </template>
@@ -15,6 +22,14 @@ export default {
         total() {
             return this.$store.state.total
         },
+    },
+    methods: {
+        sortBy() {
+            this.$emit(
+                'sortBy',
+                event.target.value
+            );
+        }
     },
 }
 </script>

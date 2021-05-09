@@ -2,7 +2,7 @@ const products = [
     {
         'id': 1,
         'title': "T-Shirt 100% Coton Fitness Sportee Noir",
-        'brand': 'Noway',
+        'brand': 'Byamba',
         'images': [
             {
                 "id": 1,
@@ -18,7 +18,7 @@ const products = [
     {
         'id': 2,
         'title': "T-Shirt Manches Longues Running Homme Noir",
-        'brand': 'Noway',
+        'brand': 'Arbor',
         'images': [
             {
                 "id": 1,
@@ -49,22 +49,6 @@ const products = [
     },
     {
         'id': 4,
-        'title': "T-Shirt D'Escalade Laine Merinos Homme Bleu-Gris",
-        'brand': 'Eskal',
-        'images': [
-            {
-                "id": 1,
-                "filename": "t-shirt-descalade-laine-merinos-edge-homme-bleu-gris.webp",
-                "alt": "T-Shirt d'escalade en laine Merinos",
-            },
-        ],
-        'description': "Conçu en laine mérinos, naturellement douce et respirante, pour les grimpeurs recherchant confort et limitations d'odeurs pendant l'effort.",
-        'quantity': 12,
-        'price': 20.0,
-        'available': true,
-    },
-    {
-        'id': 5,
         'title': "T-Shirt D'Escalade Coton Homme Bordeaux",
         'brand': 'Eskal',
         'images': [
@@ -77,6 +61,22 @@ const products = [
         'description': "Développé avec notre team de grimpeurs, pour assurer votre confort, que vous grimpiez sans relâche ou que vous assuriez au pied de la voie.",
         'quantity': 24,
         'price': 22.0,
+        'available': true,
+    },
+    {
+        'id': 5,
+        'title': "T-Shirt D'Escalade Laine Merinos Homme Bleu-Gris",
+        'brand': 'Eskal',
+        'images': [
+            {
+                "id": 1,
+                "filename": "t-shirt-descalade-laine-merinos-edge-homme-bleu-gris.webp",
+                "alt": "T-Shirt d'escalade en laine Merinos",
+            },
+        ],
+        'description': "Conçu en laine mérinos, naturellement douce et respirante, pour les grimpeurs recherchant confort et limitations d'odeurs pendant l'effort.",
+        'quantity': 12,
+        'price': 20.0,
         'available': true,
     },
 ]
