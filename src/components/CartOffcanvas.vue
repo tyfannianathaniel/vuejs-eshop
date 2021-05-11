@@ -15,7 +15,11 @@
             -->
             <table>
                 <thead>
-
+                    <tr>
+                        <th scope="col">Produit</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Total</th>
+                    </tr>
                 </thead>
                 <tbody>
 
