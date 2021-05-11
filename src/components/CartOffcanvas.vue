@@ -6,7 +6,28 @@
     </div>
     <div class="offcanvas-body">
         <div>
-        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+            <!--
+                - ajouter au store un panier
+                - ajouter à cet onglet le nombre de produits dans le panier
+                - ajouter à cet onglet la liste des produits dans le panier
+                - ajouter à cet onglet un bouton 'finaliser mes achats'
+
+            -->
+            <table>
+                <thead>
+
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <button
+                @click="checkout"
+                class="btn btn-primary"
+                type="button"
+            >
+            Finaliser mes achats
+            </button>
         </div>
     </div>
     </div>
