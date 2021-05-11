@@ -4,12 +4,10 @@ import catalog from '@/api/products'
 export default createStore({
   state: {
     products: [],
-    total: null,
   },
   mutations: {
     setProducts(state, products) {
-      state.products = products
-      state.total = products.length
+      state.products = products.filter(product => product.on_sale === true)
     }
   },
   actions: {
@@ -26,8 +24,8 @@ export default createStore({
   },
   getters: {
     availableProducts(state) {
-      return state.products.filter(product => product.available === true)
-    }
+      return state.products.filter(product => product.quantity > 0)
+    },
   },
   modules: {
   }

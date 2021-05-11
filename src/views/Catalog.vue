@@ -1,12 +1,12 @@
 <template>
   <div class="catalog">
-    <h1 class="mb-5">Catalog</h1>
+    <h1 class="mb-5">Catalogue</h1>
 
     <Spinner v-if="isLoading"/>
 
     <div v-else>
-      <ProductStatusBar @sortBy="sortBy"/>
-      <ProductGrid :filter="filter" />
+      <ProductStatusBar @sortBy="sortBy" @isAvailable="isAvailable"/>
+      <ProductGrid :filter="filter" :isAvailable="checked" />
     </div>
 
 
@@ -29,7 +29,8 @@ export default {
   data() {
     return {
         isLoading: true,
-        filter: 'foo'
+        filter: 'our-selection',
+        checked: true,
     }
   },
   created() {
@@ -40,7 +41,10 @@ export default {
   methods: {
     sortBy(event) {
       this.filter = event
-    }
+    },
+    isAvailable(event) {
+      this.checked = event
+    },
   },
 }
 

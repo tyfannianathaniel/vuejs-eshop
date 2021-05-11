@@ -5,9 +5,9 @@
             :key="product.id"
             class="col-sm-6"
         >
-            <div class="card">
+            <div class="card mw-100 h-100">
                 <span class="badge bg-warning position-absolute top-0 start-100">{{product.price}}</span>
-                <img :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
+                <img @error="setAltImg" :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
                 <div class="card-body">
                     <h5 class="card-title">{{product.brand}}</h5>
                     <router-link
@@ -28,10 +28,18 @@
 export default {
     props: {
         'filter' : String,
+        'isAvailable': Boolean,
     },
     computed: {
         products() {
-            let products = this.$store.state.products
+
+            let products =[]
+
+            if (this.isAvailable) {
+                products = this.$store.getters.availableProducts
+            } else {
+                products = this.$store.state.products
+            }
 
             switch (this.filter) {
                 case "our-selection":
@@ -51,9 +59,13 @@ export default {
         concatImgSrc(product) {
             return `./assets/images/${product.images[0].filename}`
         },
+        setAltImg(event) {
+            console.log(event)
+            // event.currentTarget.src = "#"
+        },
         sortByAscendingPrice(products) {
             return products.sort( (a, b) => {
-                return a.price - b.price
+                return parseFloat(a.price) - parseFloat(b.price)
             })
         },
         sortByAscendingId(products) {
@@ -63,8 +75,14 @@ export default {
         },
         sortByDescendingPrice(products) {
             return products.sort( (a, b) => {
-                return b.price - a.price
+                return parseFloat(b.price) - parseFloat(a.price)
             })
+        },
+        sortByAvailability(products) {
+            for (const product of products) {
+                if( product.quantity < 1 ) products.splice(products.indexOf(product), 1)
+            }
+            return products
         },
         sortByAlphabeticalBrandName(products) {
             return products.sort( (a, b) => {
@@ -92,6 +110,6 @@ export default {
     transform: translate(calc(-100% - .5rem), .5rem);
 }
 .badge::after{
-    content:" €"
+    content:" €";
 }
 </style>
