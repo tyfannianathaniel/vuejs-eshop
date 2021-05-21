@@ -3,15 +3,18 @@
   <div class="container">
     <router-view/>
   </div>
+  <SidePanel/>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
+import SidePanel from '@/components/SidePanel.vue'
 
 export default {
   name: 'Home',
   components: {
-    Header
+    Header,
+    SidePanel
   }
 }
 </script>

@@ -9,7 +9,6 @@
       <ProductGrid :filter="filter" :isAvailable="checked" />
     </div>
 
-    <Cart/>
 
 
   </div>
@@ -20,7 +19,6 @@
 import Spinner from '@/components/Spinner.vue'
 import ProductGrid from '@/components/ProductGrid.vue'
 import ProductStatusBar from '@/components/ProductStatusBar.vue'
-import Cart from '@/components/CartOffcanvas.vue'
 
 export default {
   name: 'Catalog',
@@ -28,7 +26,6 @@ export default {
     Spinner,
     ProductGrid,
     ProductStatusBar,
-    Cart,
   },
   data() {
     return {

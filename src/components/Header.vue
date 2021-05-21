@@ -3,8 +3,14 @@
         <router-link to="/">Home</router-link> |
         <router-link to="/catalog">Catalog</router-link> |
         <router-link to="/about">About</router-link> |
+        <i class="bi-github" role="img" aria-label="GitHub"></i>
+        <a
+            href="#"
+
+        >
+        Sign in
+        </a> |
         <button
-            @click="cartOverlay"
             class="btn btn-primary"
             type="button"
             data-bs-toggle="offcanvas"
@@ -18,12 +24,6 @@
 
 <script>
 export default {
-    methods: {
-        cartOverlay(event) {
-            console.log(event)
-            // toggle cart visibility
-        }
-    }
 }
 </script>
 

@@ -7,7 +7,7 @@
         >
             <div class="card mw-100 h-100">
                 <span class="badge bg-warning position-absolute top-0 start-100">{{product.price}}</span>
-                <img @error="setAltImg" :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
+                <img onerror="this.onerror=null;this.src='./assets/images/placeholder.png';" :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
                 <div class="card-body">
                     <h5 class="card-title">{{product.brand}}</h5>
                     <router-link
@@ -57,7 +57,9 @@ export default {
     },
     methods: {
         concatImgSrc(product) {
-            return `./assets/images/${product.images[0].filename}`
+            let img = `./assets/images/${product.images[0].filename}`
+            console.log(img);
+            return img;
         },
         setAltImg(event) {
             console.log(event)
@@ -111,5 +113,12 @@ export default {
 }
 .badge::after{
     content:" €";
+}
+.card:hover::after {
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(128,128,128,.1);
 }
 </style>
