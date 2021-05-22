@@ -5,17 +5,24 @@
             :key="product.id"
             class="col-sm-6"
         >
-            <div class="card mw-100 h-100">
-                <span class="badge bg-warning position-absolute top-0 start-100">{{product.price}}</span>
-                <img onerror="this.onerror=null;this.src='./assets/images/placeholder.png';" :src="concatImgSrc(product)" class="card-img-top" :alt="product.images[0].alt">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.brand}}</h5>
-                    <router-link
-                        :to="{name: 'Products', params: {id: product.id}}"
-                        class="stretched-link text-decoration-none text-reset"
+            <div
+                @mouseenter="toggleBtnVisibility"
+                @mouseleave="toggleBtnVisibility"
+                class="card mw-100 h-100 text-decoration-none text-reset"
+            >
+                <router-link class="stretched-link" :to="{name: 'Products', params: {id: product.id}}">
+                    <span class="badge bg-warning position-absolute top-0 start-100">{{product.price}}</span>
+                    <img
+                        onerror="this.onerror=null;this.src='./assets/images/placeholder.png';"
+                        :src="concatImgSrc(product)"
+                        class="card-img-top"
+                        :alt="product.images[0].alt"
                     >
-                        <p class="card-text">{{product.title}}</p>
-                    </router-link>
+                </router-link>
+                <div class="card-body position-relative">
+                    <button @click="addToCart" type="button" class="btn btn-danger">Add to Cart</button>
+                    <h5 class="card-title">{{product.brand}}</h5>
+                    <p class="card-text">{{product.title}}</p>
                 </div>
             </div>
         </div>
@@ -29,6 +36,11 @@ export default {
     props: {
         'filter' : String,
         'isAvailable': Boolean,
+    },
+    data() {
+        return {
+            toggle: false,
+        }
     },
     computed: {
         products() {
@@ -56,10 +68,19 @@ export default {
         },
     },
     methods: {
+        addToCart() {
+            console.log('product added to cart');
+        },
+        toggleBtnVisibility(e) {
+            let button = e.target.getElementsByTagName("button");
+            if (this.toggle) {
+                button[0].classList.toggle("visible");
+                return;
+            }
+            button[0].classList.toggle("visible");
+        },
         concatImgSrc(product) {
-            let img = `./assets/images/${product.images[0].filename}`
-            console.log(img);
-            return img;
+            return `./assets/images/${product.images[0].filename}`;
         },
         setAltImg(event) {
             console.log(event)
@@ -110,6 +131,7 @@ export default {
     padding: .4rem;
     color: black;
     transform: translate(calc(-100% - .5rem), .5rem);
+    z-index: 2000;
 }
 .badge::after{
     content:" €";
@@ -120,5 +142,16 @@ export default {
     width: 100%;
     height: 100%;
     background: rgba(128,128,128,.1);
+}
+button {
+    visibility: hidden;
+    position: absolute;
+    transform: translate(-50%, -150%);
+    top: 0;
+    left: 50%;
+    z-index: 2000;
+}
+button:hover {
+    background: #B02A37;
 }
 </style>
