@@ -8,9 +8,9 @@
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <li class="nav-item active"><router-link class="nav-link ps-0" to="/">Home</router-link></li>
-          <li class="nav-item"><router-link class="nav-link" to="/catalog">Catalog</router-link></li>
-          <li class="nav-item"><router-link class="nav-link" to="/about">About</router-link></li>
+          <li class="nav-item active"><router-link class="nav-link ps-0" to="/">Accueil</router-link></li>
+          <li class="nav-item"><router-link class="nav-link" to="/catalog">Catalogue</router-link></li>
+          <li class="nav-item"><router-link class="nav-link" to="/about">Contact</router-link></li>
         </ul>
       </div>
 
@@ -22,17 +22,26 @@
             <router-link class="nav-link" to="#"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasCart"
-              aria-controls="offcanvasCart">
+              aria-controls="offcanvasCart"
+            >
               <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#heart"/></svg>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="#">
+            <router-link class="nav-link" to="#"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasCart"
+              aria-controls="offcanvasCart"
+            >
               <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#person-circle"/></svg>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link pe-0" to="#">
+            <router-link class="nav-link pe-0" to="#"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasCart"
+              aria-controls="offcanvasCart"
+            >
               <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#bag"/></svg>
             </router-link>
           </li>

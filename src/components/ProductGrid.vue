@@ -20,7 +20,7 @@
                     >
                 </router-link>
                 <div class="card-body position-relative">
-                    <button @click="addToCart" type="button" class="btn btn-danger zindex-sticky">Add to Cart</button>
+                    <button @click="addToCart" type="button" class="btn btn-danger">Add to Cart</button>
                     <h5 class="card-title">{{product.brand}}</h5>
                     <p class="card-text">{{product.title}}</p>
                 </div>
@@ -148,6 +148,7 @@ button {
     transform: translate(-50%, -150%);
     top: 0;
     left: 50%;
+    z-index: 10;
 }
 button:hover {
     background: #B02A37;
