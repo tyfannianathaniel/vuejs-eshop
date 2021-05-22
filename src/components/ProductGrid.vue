@@ -1,5 +1,5 @@
 <template>
-    <main class="mb-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <main class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <div
             v-for="product of products"
             :key="product.id"
@@ -11,7 +11,7 @@
                 class="card mw-100 h-100 text-decoration-none text-reset"
             >
                 <router-link class="stretched-link" :to="{name: 'Products', params: {id: product.id}}">
-                    <span class="badge bg-warning position-absolute top-0 start-100">{{product.price}}</span>
+                    <span class="badge bg-warning position-absolute top-0 start-100 zindex-sticky">{{product.price}}</span>
                     <img
                         onerror="this.onerror=null;this.src='./assets/images/placeholder.png';"
                         :src="concatImgSrc(product)"
@@ -20,7 +20,7 @@
                     >
                 </router-link>
                 <div class="card-body position-relative">
-                    <button @click="addToCart" type="button" class="btn btn-danger">Add to Cart</button>
+                    <button @click="addToCart" type="button" class="btn btn-danger zindex-sticky">Add to Cart</button>
                     <h5 class="card-title">{{product.brand}}</h5>
                     <p class="card-text">{{product.title}}</p>
                 </div>
@@ -131,7 +131,6 @@ export default {
     padding: .4rem;
     color: black;
     transform: translate(calc(-100% - .5rem), .5rem);
-    z-index: 2000;
 }
 .badge::after{
     content:" €";
@@ -149,7 +148,6 @@ button {
     transform: translate(-50%, -150%);
     top: 0;
     left: 50%;
-    z-index: 2000;
 }
 button:hover {
     background: #B02A37;

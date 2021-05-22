@@ -1,6 +1,6 @@
 <template>
-  <div class="catalog">
-    <h1 class="mb-5">Catalogue</h1>
+  <div>
+    <h1 class="fs-4 mb-5">Catalogue</h1>
 
     <Spinner v-if="isLoading"/>
 
@@ -53,5 +53,4 @@ export default {
 </script>
 
 <style>
-
 </style>
