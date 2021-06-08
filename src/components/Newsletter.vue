@@ -1,13 +1,14 @@
 <template>
-    <section id="newsletter">
+    <section id="newsletter" class="text-center">
         <h2>Newsletter</h2>
         <p>Rejoignez-nous pour recevoir les nouveautés et bons plans.</p>
 
-        <form method="POST" class="">
-            <input type="email" name="newsemail" placeholder="Votre email" aria-label="Entrez votre email pour souscrire à la newsletter">
-            <input type="submit" value="M'inscrire" aria-label="Souscrire à la newsletter">
+        <form method="POST">
+            <input class="me-1 px-4 rounded-pill border border-1 border-secondary" type="email" name="newsemail" placeholder="Votre email" aria-label="Entrez votre email pour souscrire à la newsletter">
+            <input class="px-3 rounded-pill border border-1 border-white" type="submit" value="M'inscrire" aria-label="Souscrire à la newsletter">
         </form>
     </section>
+
 </template>
 
 <script>
@@ -17,21 +18,5 @@ export default {
 </script>
 
 <style scoped>
-    section{
-        text-align: center;
-    }
 
-    form > input {
-        margin-right: 20px;
-    }
-
-    input{
-        border: 1px solid #e5e5e5;
-        border-radius: 30px;
-        padding: 0 30px;
-    }
-
-    ul{
-        padding: 0;
-    }
 </style>
