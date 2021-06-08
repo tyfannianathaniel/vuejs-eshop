@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <New collection="Nouvelle collection PE21" msg="Notre sélection pour les beaux jours"/>
+    <Bestsellers/>
+    <Reassurance />
+    <Newsletter />
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import New from '@/components/New.vue';
+import Bestsellers from '@/components/Bestsellers.vue';
+import Newsletter from '@/components/Newsletter.vue';
+import Reassurance from '@/components/Reassurance.vue';
+
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    New,
+    Bestsellers,
+    Reassurance,
+    Newsletter
   }
 }
 </script>
+
+<style scoped>
+section {
+  margin: 10px 0px;
+}
+</style>
