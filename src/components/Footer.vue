@@ -3,6 +3,7 @@
         <Reassurance />
         <Newsletter />
         <SocialMedia />
+        <Contact />
     </footer>
 </template>
 
@@ -11,13 +12,16 @@
 import Reassurance from '@/components/Reassurance.vue';
 import Newsletter from '@/components/Newsletter.vue';
 import SocialMedia from '@/components/SocialMedia.vue';
+import Contact from '@/components/Contact.vue';
+
 
 export default {
     name: 'Footer',
     components: {
         Reassurance,
         Newsletter,
-        SocialMedia
+        SocialMedia,
+        Contact
     }
 }
 </script>
