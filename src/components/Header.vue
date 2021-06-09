@@ -56,16 +56,22 @@
             </router-link>
           </li>
         </ul>
+        <Multilingue />
       </div>
-
-      
 
     </div>
   </nav>
 </template>
 
 <script>
+
+import Multilingue from '@/components/Multilingue.vue';
+
 export default {
+  name: 'Header',
+  components: {
+    Multilingue
+  }
 }
 </script>
 
