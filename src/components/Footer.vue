@@ -4,6 +4,7 @@
         <Newsletter />
         <SocialMedia />
         <Contact />
+        <FooterMenu />
     </footer>
 </template>
 
@@ -13,6 +14,8 @@ import Reassurance from '@/components/Reassurance.vue';
 import Newsletter from '@/components/Newsletter.vue';
 import SocialMedia from '@/components/SocialMedia.vue';
 import Contact from '@/components/Contact.vue';
+import FooterMenu from '@/components/FooterMenu.vue';
+
 
 
 export default {
@@ -21,7 +24,8 @@ export default {
         Reassurance,
         Newsletter,
         SocialMedia,
-        Contact
+        Contact,
+        FooterMenu
     }
 }
 </script>
