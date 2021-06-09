@@ -1,6 +1,6 @@
 <template>
     <section id="socialmedia" class="text-center">
-        <ul class="d-inline-flex">
+        <ul class="d-inline-flex list-unstyled">
             <li class="nav-item">
                 <router-link class="nav-link pe-0" to="#">
                     <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#instagram"/></svg>

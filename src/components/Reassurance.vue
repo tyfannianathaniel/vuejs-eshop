@@ -1,6 +1,6 @@
 <template>
     <section>
-        <ul class="d-flex row text-center justify-content-between">
+        <ul class="d-flex row text-center justify-content-between list-unstyled">
             <li class="col-6 col-md-3">
                 <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#arrow-counterclockwise"/></svg>
                 <p>Retour gratuit sous <br> 30 jours</p>

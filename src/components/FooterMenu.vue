@@ -3,7 +3,7 @@
         <section class="text-center col-sm-6">
             <div>
                 <p class="text-uppercase">À propos de MyShop</p>
-                <ul class="ps-0">
+                <ul class="ps-0 list-unstyled">
                     <li>
                         <a class="text-decoration-none" href="#">Notre histoire</a>
                     </li>
@@ -19,7 +19,7 @@
         <section class="text-center col-sm-6">
             <div>
                 <p class="text-uppercase">Nos services</p>
-                <ul class="ps-0">
+                <ul class="ps-0 list-unstyled">
                     <li>
                         <a class="text-decoration-none" href="#">Suivre votre commande</a>
                     </li>
