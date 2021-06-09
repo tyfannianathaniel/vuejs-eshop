@@ -56,21 +56,25 @@
             </router-link>
           </li>
         </ul>
-        <Multilingue />
       </div>
 
     </div>
+    
+    <SearchBar />
+    <Multilingue />
   </nav>
 </template>
 
 <script>
 
 import Multilingue from '@/components/Multilingue.vue';
+import SearchBar from '@/components/SearchBar.vue';
 
 export default {
   name: 'Header',
   components: {
-    Multilingue
+    Multilingue,
+    SearchBar
   }
 }
 </script>
