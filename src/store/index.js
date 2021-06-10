@@ -16,7 +16,6 @@ export default createStore({
         function (resolve) {
           catalog.getProducts(products => {
             context.commit('setProducts', products)
-            console.log(products)
             resolve()
           })
         }
