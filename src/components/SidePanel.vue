@@ -14,7 +14,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="overlay-tab-content">
-                <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab"><LoginForm/><SignInForm/></div>
+                <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab"><LoginForm/><SignInFormGoto/></div>
                 <div class="tab-pane fade" id="cart" role="tabpanel" aria-labelledby="cart-tab"><Cart/></div>
             </div>
         </div>
@@ -34,18 +34,21 @@
 
 <script>
 import LoginForm from '@/components/LoginForm.vue'
-import SignInForm from '@/components/SignInForm.vue'
+import SignInFormGoto from '@/components/SignInFormGoto.vue'
 import Cart from '@/components/Cart.vue'
 
 export default {
     components: {
         LoginForm,
-        SignInForm,
+        SignInFormGoto,
         Cart,
     },
 }
 </script>
 
 <style>
-
+  .sidePanelForms {
+    width: 80%;
+    margin: auto;
+  }
 </style>
