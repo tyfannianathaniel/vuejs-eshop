@@ -130,8 +130,7 @@ export default {
   },
   created(){
         this.$store.dispatch("fetchProducts").then(() =>{})
-        console.log(this.$store.state)
     }
-  
+
 }
 </script>

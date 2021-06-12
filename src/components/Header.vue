@@ -22,6 +22,11 @@
       <!-- second menu -->
       <div class="navbar">
         <ul class="navbar-nav d-flex flex-row mb-3">
+
+          <li class="nav-item p-1">
+            <Multilang class="nav-link pe-0"/>
+          </li>
+
           <!-- search bar -->
           <li class="nav-item p-1">
             <router-link class="nav-link pe-0" to="#"
@@ -32,6 +37,7 @@
               <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#search"/></svg>
             </router-link>
           </li>
+
           <!-- account -->
           <li class="nav-item p-1">
             <router-link class="nav-link" to="#"
@@ -42,6 +48,7 @@
               <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#person-circle"/></svg>
             </router-link>
           </li>
+
           <!-- cart -->
           <li class="nav-item p-1">
             <router-link class="nav-link pe-0" to="#"
@@ -52,6 +59,7 @@
               <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#bag"/></svg>
             </router-link>
           </li>
+
         </ul>
       </div>
     </div>
@@ -59,8 +67,13 @@
 </template>
 
 <script>
+import Multilang from '@/components/Multilang';
+
 export default {
   name: 'Header',
+  components: {
+    Multilang,
+  }
 }
 </script>
 
