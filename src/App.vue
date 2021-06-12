@@ -5,19 +5,22 @@
     <Footer />
   </div>
   <SidePanel/>
+  <SearchBar/>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import SidePanel from '@/components/SidePanel.vue'
+import SearchBar from '@/components/SearchBar.vue'
 
 export default {
   name: 'Home',
   components: {
     Header,
     Footer,
-    SidePanel
+    SidePanel,
+    SearchBar
   }
 }
 </script>

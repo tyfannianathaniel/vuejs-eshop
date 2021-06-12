@@ -1,14 +1,11 @@
 <template>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="side panel">
     <div class="offcanvas-header">
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div>
             <ul class="nav nav-tabs nav-justified" id="overlay-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="favorites-tab" data-bs-toggle="tab" data-bs-target="#favorites" type="button" role="tab" aria-controls="" aria-selected="true" >Favoris</button>
-                </li>
                 <li class="nav-item" role="presentation">
                   <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="" aria-selected="false" >Compte</button>
                 </li>
@@ -17,7 +14,6 @@
                 </li>
             </ul>
             <div class="tab-content" id="overlay-tab-content">
-                <div class="tab-pane fade show active" id="favorites" role="tabpanel" aria-labelledby="favorites-tab"><Favorites/></div>
                 <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab"><LoginForm/><SignInForm/></div>
                 <div class="tab-pane fade" id="cart" role="tabpanel" aria-labelledby="cart-tab"><Cart/></div>
             </div>
@@ -37,14 +33,12 @@
 </template>
 
 <script>
-import Favorites from '@/components/Favorites.vue'
 import LoginForm from '@/components/LoginForm.vue'
 import SignInForm from '@/components/SignInForm.vue'
 import Cart from '@/components/Cart.vue'
 
 export default {
     components: {
-        Favorites,
         LoginForm,
         SignInForm,
         Cart,
