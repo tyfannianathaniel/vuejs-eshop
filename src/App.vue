@@ -22,13 +22,8 @@ export default {
     SidePanel,
     SearchBar,
   },
-  data() {
-    return {
-        isLoading: true,
-    }
-  },
   created(){
-      this.$store .dispatch("productsModule/FETCH_PRODUCTS")
+      this.$store.dispatch("productsModule/FETCH_PRODUCTS")
   }
 }
 </script>

@@ -53,7 +53,7 @@ export default {
             if (this.checked) {
                 return this.$store.getters['productsModule/getAvailableProducts'].length
             } else {
-                return this.$store.state['productsModule/products'].length
+                return this.$store.state.productsModule.products.length
             }
         },
     },

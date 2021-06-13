@@ -34,9 +34,16 @@ export default {
   },
   data() {
     return {
-        isLoading: this.$store.state['productsModule/isLoading'],
+        isLoading: true,
         filter: 'our-selection',
         checked: true,
+    }
+  },
+  created() {
+    if (this.$store.state.productsModule.isLoading) {
+      this.$store.dispatch("productsModule/FETCH_PRODUCTS").then( () => this.isLoading = false)
+    } else {
+      this.isLoading = false
     }
   },
   methods: {

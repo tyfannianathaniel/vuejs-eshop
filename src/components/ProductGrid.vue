@@ -59,7 +59,7 @@ export default {
         if (this.isAvailable) {
             products = this.$store.getters['productsModule/getAvailableProducts']
         } else {
-            products = this.$store.state['productsModule/products']
+            products = this.$store.state.productsModule.products
         }
 
         switch (this.filter) {

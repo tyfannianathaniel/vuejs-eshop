@@ -11,7 +11,9 @@ export default {
   name:'Multilang',
   computed: {
     langs() {
-      return this.$store.state['langsModule/langs'];
+      let langs = this.$store.state.langsModule.langs
+      console.log(langs)
+      return langs
     },
   },
   created(){
