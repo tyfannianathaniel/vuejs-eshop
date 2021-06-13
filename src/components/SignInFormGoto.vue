@@ -2,19 +2,36 @@
   <div class="text-center sidePanelForms my-5">
 
     <div class="pb-4">
-      <span class="display-6 ">Vous n'avez pas de compte ?</span>
-      <button @click="displaySignIn" type="button" class="my-3 btn btn-primary">Créer un compte</button>
+      <span class="lead ">{{ t("don't have an account yet") }}</span>
+      <button @click="displaySignIn" type="button" class="my-3 btn btn-primary">{{ t('create an account') }}</button>
     </div>
 
   </div>
 </template>
 
 <script>
-export default {
+import { useI18n } from 'vue-i18n';
 
+export default {
+ setup() {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { t }
+  }
 }
 </script>
 
-<style>
-
-</style>
+<i18n>
+{
+  "en": {
+    "don't have an account yet": "Don't have an account yet?",
+    "create an account": "Create an Account"
+  },
+  "fr": {
+    "don't have an account yet": "Vous n'avez pas de compte{'\u202f'}?",
+    "create an account": "Créer un compte"
+  }
+}
+</i18n>

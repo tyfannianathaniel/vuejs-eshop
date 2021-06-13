@@ -7,10 +7,10 @@
         <div>
             <ul class="nav nav-tabs nav-justified" id="overlay-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="" aria-selected="false" >Compte</button>
+                  <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="" aria-selected="false" >{{ t('account') }}</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="cart-tab" data-bs-toggle="tab" data-bs-target="#cart" type="button" role="tab" aria-controls="" aria-selected="false" >Panier</button>
+                  <button class="nav-link" id="cart-tab" data-bs-toggle="tab" data-bs-target="#cart" type="button" role="tab" aria-controls="" aria-selected="false" >{{ t('cart') }}</button>
                 </li>
             </ul>
             <div class="tab-content" id="overlay-tab-content">
@@ -36,12 +36,20 @@
 import LoginForm from '@/components/LoginForm.vue'
 import SignInFormGoto from '@/components/SignInFormGoto.vue'
 import Cart from '@/components/Cart.vue'
+import { useI18n } from 'vue-i18n';
 
 export default {
     components: {
         LoginForm,
         SignInFormGoto,
         Cart,
+    },
+    setup() {
+      const { t } = useI18n({
+        inheritLocale: true,
+        useScope: 'local'
+      })
+      return { t }
     },
 }
 </script>
@@ -52,3 +60,17 @@ export default {
     margin: auto;
   }
 </style>
+
+
+<i18n>
+{
+  "en": {
+    "account": "Account",
+    "cart": "Cart"
+  },
+  "fr": {
+    "account": "Compte",
+    "cart": "Panier"
+  }
+}
+</i18n>
