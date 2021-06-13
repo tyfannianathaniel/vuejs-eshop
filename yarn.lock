@@ -10732,7 +10732,7 @@
   "resolved" "https://registry.npmjs.org/vue-i18n/-/vue-i18n-8.24.4.tgz"
   "version" "8.24.4"
 
-"vue-i18n@^9.1.0":
+"vue-i18n@^9.1.6":
   "integrity" "sha512-FEC4HZkTH6QRIu/A0wlo0VS/GH3w/fuCC6xfvoC8IyhhtbG9A+go9NfW+HZ1ZXdAcO4EWcVQi04M+iSwuxgixw=="
   "resolved" "https://registry.npmjs.org/vue-i18n/-/vue-i18n-9.1.6.tgz"
   "version" "9.1.6"
