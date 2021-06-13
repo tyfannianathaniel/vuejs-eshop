@@ -1,5 +1,5 @@
 <template>
-    <h2>Nos Bestsellers</h2>    
+    <h2>Nos Bestsellers</h2>
     <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <div v-for="product of products"
             :key="product.id">
@@ -49,7 +49,6 @@ export default {
     },
     created(){
         this.$store.dispatch("fetchProducts").then(() =>{})
-        console.log(this.$store.state)
     }
 }
 </script>

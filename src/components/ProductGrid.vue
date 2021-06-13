@@ -69,7 +69,6 @@ export default {
     },
     methods: {
         addToCart() {
-            console.log('product added to cart');
         },
         toggleBtnVisibility(e) {
             let button = e.target.getElementsByTagName("button");
@@ -81,10 +80,6 @@ export default {
         },
         concatImgSrc(product) {
             return `./assets/images/${product.images[0].filename}`;
-        },
-        setAltImg(event) {
-            console.log(event)
-            // event.currentTarget.src = "#"
         },
         sortByAscendingPrice(products) {
             return products.sort( (a, b) => {

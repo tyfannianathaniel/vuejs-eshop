@@ -10,9 +10,9 @@
       <!-- main menu -->
       <div class="collapse navbar-collapse flex-grow-0">
         <ul class="navbar-nav">
-          <li class="nav-item active"><router-link class="nav-link ps-0" to="/">Accueil</router-link></li>
-          <li class="nav-item"><router-link class="nav-link" to="/catalog">Catalogue</router-link></li>
-          <li class="nav-item"><router-link class="nav-link" to="/about">Contact</router-link></li>
+          <li class="nav-item active"><router-link class="nav-link ps-0" to="/">{{ t('homepage') }}</router-link></li>
+          <li class="nav-item"><router-link class="nav-link" to="/catalog">{{ t('catalog' )}}</router-link></li>
+          <!-- <li class="nav-item"><router-link class="nav-link" to="/about">Contact</router-link></li> -->
         </ul>
       </div>
 
@@ -68,11 +68,19 @@
 
 <script>
 import Multilang from '@/components/Multilang';
+import { useI18n } from 'vue-i18n';
 
 export default {
   name: 'Header',
   components: {
     Multilang,
+  },
+  setup() {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { t }
   }
 }
 </script>
@@ -80,3 +88,16 @@ export default {
 <style>
 
 </style>
+
+<i18n>
+{
+  "en": {
+    "homepage": "Homepage",
+    "catalog": "Catalog"
+  },
+  "fr": {
+    "homepage": "Accueil",
+    "catalog": "Catalogue"
+  }
+}
+</i18n>

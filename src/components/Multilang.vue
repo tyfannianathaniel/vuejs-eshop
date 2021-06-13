@@ -13,7 +13,6 @@ export default {
   name:'Multilang',
   computed: {
     langs() {
-      console.log(this.$store.state.langs)
       return this.$store.state.langs;
     },
   },

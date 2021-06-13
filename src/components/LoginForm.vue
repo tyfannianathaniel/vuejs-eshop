@@ -7,6 +7,7 @@
     </div>
 
     <form>
+      <!-- take a look: https://www.npmjs.com/package/vee-validate -->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Adresse mail*</label>
         <input type="email" class="form-control" placeholder="mon-adresse@mail.com" id="exampleInputEmail1" aria-describedby="emailHelp">

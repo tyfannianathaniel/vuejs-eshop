@@ -20,12 +20,10 @@ export default {
     Header,
     Footer,
     SidePanel,
-    SearchBar
+    SearchBar,
   }
 }
 </script>
-
-
 
 <style>
 #app {
