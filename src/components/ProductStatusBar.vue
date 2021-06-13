@@ -1,20 +1,20 @@
 <template>
     <aside class="d-flex pb-3 justify-content-between ">
         <div>
-            <p class="text-start"><span class="badge bg-secondary">{{total}}</span> Produits</p>
+            <p class="text-start"><span class="badge bg-secondary">{{total}}</span>{{ t('products') }}</p>
         </div>
         <div class="d-flex">
             <div class="pe-5 form-check form-switch">
                 <input @change="isAvailable(event)" v-model="checked" class="form-check-input" type="checkbox" id="switchAvailableNow" checked>
-                <label class="form-check-label" for="switchAvailableNow">Disponible maintenant</label>
+                <label class="form-check-label" for="switchAvailableNow">{{ t('available now') }}</label>
             </div>
             <div>
                 <form>
                     <select @change="sortBy(event)" class="form-select form-select-sm" aria-label="select 'sort by' filter">
-                        <option selected value="our-selection">Notre sélection</option>
-                        <option value="price-ascending">Prix (ascendant)</option>
-                        <option value="price-descending">Prix (descendant)</option>
-                        <option value="brand-name">par Marque</option>
+                        <option selected value="our-selection">{{ t('our selection') }}</option>
+                        <option value="price-ascending">{{ t('ascending price') }}</option>
+                        <option value="price-descending">{{ t('descending price') }}</option>
+                        <option value="brand-name">{{ t('by manufacturer') }}</option>
 
                         <!-- <option v-for="filter in sortByFilters" :key="filter.value" value="filter.value">{{filter.text}}</option> -->
 
@@ -26,7 +26,17 @@
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
+
 export default {
+    name: 'ProductStatusBar',
+    setup() {
+      const { t } = useI18n({
+        inheritLocale: true,
+        useScope: 'local'
+      })
+      return { t }
+    },
     data() {
         return {
             // sortByFilters: [
@@ -64,6 +74,23 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<i18n>
+{
+  "en": {
+    "products": " Products",
+    "available now": "Available now",
+    "our selection": "Our selection",
+    "ascending price": "Ascending price",
+    "descending price": "Descending price",
+    "by manufacturer": "By manufacturer"
+  },
+  "fr": {
+    "products": " Produits",
+    "available now": "Disponible maintenant",
+    "our selection": "Notre sélection",
+    "ascending price": "Prix (ascendant)",
+    "descending price": "Prix (descendant)",
+    "by manufacturer": "Par marque"
+  }
+}
+</i18n>

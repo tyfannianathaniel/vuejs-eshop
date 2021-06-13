@@ -20,7 +20,7 @@
                     >
                 </router-link>
                 <div class="card-body position-relative">
-                    <button @click="addToCart" type="button" class="btn btn-danger">Add to Cart</button>
+                    <button @click="addToCart" type="button" class="btn btn-danger">{{ t('add to cart') }}</button>
                     <h5 class="card-title">{{product.brand}}</h5>
                     <p class="card-text">{{product.title}}</p>
                 </div>
@@ -31,11 +31,20 @@
 
 
 <script>
+import { useI18n } from 'vue-i18n';
 
 export default {
+    name:'ProductGrid',
     props: {
         'filter' : String,
         'isAvailable': Boolean,
+    },
+    setup() {
+      const { t } = useI18n({
+        inheritLocale: true,
+        useScope: 'local'
+      })
+      return { t }
     },
     data() {
         return {
@@ -149,3 +158,14 @@ button:hover {
     background: #B02A37;
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "add to cart": "Add to cart"
+  },
+  "fr": {
+    "add to cart": "Ajouter au panier"
+  }
+}
+</i18n>

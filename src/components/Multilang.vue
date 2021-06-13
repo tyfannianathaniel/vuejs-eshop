@@ -1,8 +1,6 @@
 <template>
     <div>
-        <select class="form-select" name="lang" id="lang" aria-label="lang select">
-            <!-- <option value="fr"><span class="flag flag-fr"></span>FR</option> -->
-            <!-- <option value="en"><span class="flag-icon flag-icon-en"></span>EN</option> -->
+        <select class="form-select" v-model="$i18n.locale" name="lang" id="lang" aria-label="lang select">
             <option v-for="lang of langs" :key="lang.id" :value="lang.iso_code" >{{ lang.iso_code }}</option>
         </select>
     </div>
