@@ -2,6 +2,7 @@
   <section class="mb-5">
     <h1>This is a product page. Product ID: {{$route.params.id}}</h1>
     <div class="row">
+
       <!-- Div photos -->
       <div class="col-md-6 mb-4 mb-md-0">
 
@@ -125,12 +126,8 @@ export default {
   name:'Products',
   computed: {
     product(){
-      return this.$store.state.products
+      return this.$store.state['productsModule/products']
     }
-  },
-  created(){
-        this.$store.dispatch("fetchProducts").then(() =>{})
-    }
-
+  }
 }
 </script>

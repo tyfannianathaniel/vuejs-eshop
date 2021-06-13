@@ -9,11 +9,8 @@
       <ProductGrid :filter="filter" :isAvailable="checked" />
     </div>
 
-
-
   </div>
 </template>
-
 
 <script>
 import Spinner from '@/components/Spinner.vue'
@@ -37,15 +34,10 @@ export default {
   },
   data() {
     return {
-        isLoading: true,
+        isLoading: this.$store.state['productsModule/isLoading'],
         filter: 'our-selection',
         checked: true,
     }
-  },
-  created() {
-      this.$store.dispatch('fetchProducts').then(
-          () => this.isLoading = false
-      )
   },
   methods: {
     sortBy(event) {

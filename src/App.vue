@@ -21,6 +21,14 @@ export default {
     Footer,
     SidePanel,
     SearchBar,
+  },
+  data() {
+    return {
+        isLoading: true,
+    }
+  },
+  created(){
+      this.$store .dispatch("productsModule/FETCH_PRODUCTS")
   }
 }
 </script>

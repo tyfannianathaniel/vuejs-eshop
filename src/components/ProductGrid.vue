@@ -20,7 +20,7 @@
                     >
                 </router-link>
                 <div class="card-body position-relative">
-                    <button @click="addToCart" type="button" class="btn btn-danger">{{ t('add to cart') }}</button>
+                    <button @click="addToCart(product)" type="button" class="btn btn-danger">{{ t('add to cart') }}</button>
                     <h5 class="card-title">{{product.brand}}</h5>
                     <p class="card-text">{{product.title}}</p>
                 </div>
@@ -36,8 +36,8 @@ import { useI18n } from 'vue-i18n';
 export default {
     name:'ProductGrid',
     props: {
-        'filter' : String,
-        'isAvailable': Boolean,
+      'filter' : String,
+      'isAvailable': Boolean,
     },
     setup() {
       const { t } = useI18n({
@@ -47,85 +47,86 @@ export default {
       return { t }
     },
     data() {
-        return {
-            toggle: false,
-        }
+      return {
+        toggle: false,
+      }
     },
     computed: {
-        products() {
+      products() {
 
-            let products =[]
+        let products =[]
 
-            if (this.isAvailable) {
-                products = this.$store.getters.availableProducts
-            } else {
-                products = this.$store.state.products
-            }
+        if (this.isAvailable) {
+            products = this.$store.getters['productsModule/getAvailableProducts']
+        } else {
+            products = this.$store.state['productsModule/products']
+        }
 
-            switch (this.filter) {
-                case "our-selection":
-                    return this.sortByAscendingId(products)
-                case "price-ascending":
-                    return this.sortByAscendingPrice(products)
-                case "price-descending":
-                    return this.sortByDescendingPrice(products)
-                case "brand-name":
-                    return this.sortByAlphabeticalBrandName(products)
-                default:
-                    return this.$store.state.products
-            }
-        },
+        switch (this.filter) {
+            case "our-selection":
+                return this.sortByAscendingId(products)
+            case "price-ascending":
+                return this.sortByAscendingPrice(products)
+            case "price-descending":
+                return this.sortByDescendingPrice(products)
+            case "brand-name":
+                return this.sortByAlphabeticalBrandName(products)
+            default:
+                return products
+        }
+      },
     },
     methods: {
-        addToCart() {
-        },
-        toggleBtnVisibility(e) {
-            let button = e.target.getElementsByTagName("button");
-            if (this.toggle) {
-                button[0].classList.toggle("visible");
-                return;
-            }
+      addToCart() {
+        // this.$store.dispatch("updateCart", { product: product })
+      },
+      toggleBtnVisibility(e) {
+        let button = e.target.getElementsByTagName("button");
+        if (this.toggle) {
             button[0].classList.toggle("visible");
-        },
-        concatImgSrc(product) {
-            return `./assets/images/${product.images[0].filename}`;
-        },
-        sortByAscendingPrice(products) {
-            return products.sort( (a, b) => {
-                return parseFloat(a.price) - parseFloat(b.price)
-            })
-        },
-        sortByAscendingId(products) {
-            return products.sort( (a, b) => {
-                return a.id - b.id
-            })
-        },
-        sortByDescendingPrice(products) {
-            return products.sort( (a, b) => {
-                return parseFloat(b.price) - parseFloat(a.price)
-            })
-        },
-        sortByAvailability(products) {
-            for (const product of products) {
-                if( product.quantity < 1 ) products.splice(products.indexOf(product), 1)
+            return;
+        }
+        button[0].classList.toggle("visible");
+      },
+      concatImgSrc(product) {
+        return `./assets/images/${product.images[0].filename}`;
+      },
+      sortByAscendingPrice(products) {
+        return products.sort( (a, b) => {
+            return parseFloat(a.price) - parseFloat(b.price)
+        })
+      },
+      sortByAscendingId(products) {
+        return products.sort( (a, b) => {
+            return a.id - b.id
+        })
+      },
+      sortByDescendingPrice(products) {
+        return products.sort( (a, b) => {
+            return parseFloat(b.price) - parseFloat(a.price)
+        })
+      },
+      sortByAvailability(products) {
+        for (const product of products) {
+            if( product.quantity < 1 ) products.splice(products.indexOf(product), 1)
+        }
+        return products
+      },
+      sortByAlphabeticalBrandName(products) {
+        return products.sort( (a, b) => {
+
+            let aBrand = a.brand.toLowerCase()
+            let bBrand = b.brand.toLowerCase()
+
+            if ( aBrand < bBrand ) {
+                return -1
             }
-            return products
-        },
-        sortByAlphabeticalBrandName(products) {
-            return products.sort( (a, b) => {
-
-                let aBrand = a.brand.toLowerCase()
-                let bBrand = b.brand.toLowerCase()
-
-                if ( aBrand < bBrand ) {
-                    return -1
-                }
-                if ( aBrand > bBrand ) {
-                    return 1
-                }
-                return 0
-            })
-        },
+            if ( aBrand > bBrand ) {
+                return 1
+            }
+            return 0
+        })
+      },
     },
 }
 </script>

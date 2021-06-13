@@ -26,30 +26,16 @@
 <script>
 export default {
     name:'Bestsellers',
-    props: {
-    },
     computed: {
-        products(){
-            let products =[]
-
-            products = this.$store.getters.isBestseller
-
-            return products
-
-        }
+      products(){
+          return this.$store.getters['productsModule/isBestseller']
+      }
     },
     methods: {
-        concatImgSrc(product) {
-            return `./assets/images/${product.images[0].filename}`;
-        },
-        setAltImg(event) {
-            console.log(event)
-            // event.currentTarget.src = "#"
-        }
+      concatImgSrc(product) {
+          return `./assets/images/${product.images[0].filename}`;
+      }
     },
-    created(){
-        this.$store.dispatch("fetchProducts").then(() =>{})
-    }
 }
 </script>
 

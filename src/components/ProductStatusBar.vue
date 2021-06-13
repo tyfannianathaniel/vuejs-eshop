@@ -51,9 +51,9 @@ export default {
     computed: {
         total() {
             if (this.checked) {
-                return this.$store.getters.availableProducts.length
+                return this.$store.getters['productsModule/getAvailableProducts'].length
             } else {
-                return this.$store.state.products.length
+                return this.$store.state['productsModule/products'].length
             }
         },
     },
