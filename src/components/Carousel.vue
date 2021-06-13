@@ -23,17 +23,17 @@ export default {
                 {
                     title: 'Découvrez notre collection de Tops',
                     image: require('@/assets/1.jpg'),
-                    link: '#'
+                    link: '/catalog'
                 },
                 {
                     title: 'Découvrez notre collection de Pantalons',
                     image: require('@/assets/2.jpg'),
-                    link: '#'
+                    link: '/catalog'
                 },
                 {
                     title: 'Découvrez notre collection d\'Accessoires',
                     image: require('@/assets/3.jpg'),
-                    link: '#'
+                    link: '/catalog'
                 }
 
             ]
