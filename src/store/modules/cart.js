@@ -20,7 +20,7 @@ const mutations = {
     state.items.splice(index, 1)
   },
 
-  incrementItemQuantity( state, id ) {
+  incrementItemQuantity( state, { id } ) {
     const item = state.items.find( item => item.id === id )
     item.quantity++
   },

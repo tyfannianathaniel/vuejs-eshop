@@ -17,7 +17,7 @@
                   onerror="this.onerror=null;this.src='./assets/images/placeholder.png';"
                   :src="concatImgSrc(product)"
                   :alt="product.images[0].alt"
-                  class="h-100 img-fluid"
+                  class="rounded h-100 img-fluid"
               >
             </div>
             <div class="col-7 card-body position-relative">
