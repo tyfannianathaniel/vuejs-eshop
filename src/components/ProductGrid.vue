@@ -20,7 +20,17 @@
                     >
                 </router-link>
                 <div class="card-body position-relative">
-                    <button @click="addToCart(product)" type="button" class="btn btn-danger">{{ t('add to cart') }}</button>
+                    <button
+                      @click="addToCart(product)"
+                      type="button"
+                      class="btn btn-danger"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvas"
+                      aria-controls="offcanvas"
+                      to="#"
+                    >
+                      {{ t('add to cart') }}
+                    </button>
                     <h5 class="card-title">{{product.brand}}</h5>
                     <p class="card-text">{{product.title}}</p>
                 </div>
@@ -31,7 +41,8 @@
 
 
 <script>
-import { useI18n } from 'vue-i18n';
+import { useI18n } from 'vue-i18n'
+import { mapState, mapActions } from 'vuex'
 
 export default {
     name:'ProductGrid',
@@ -77,9 +88,19 @@ export default {
       },
     },
     methods: {
-      addToCart() {
-        // this.$store.dispatch("updateCart", { product: product })
+
+      ...mapActions( 'cartModule', [
+        'ADD_PRODUCT_TO_CART'
+      ]),
+
+      ...mapState({
+        products: state => state.productsModule.products
+      }),
+
+      addToCart(product) {
+        this.ADD_PRODUCT_TO_CART(product)
       },
+
       toggleBtnVisibility(e) {
         let button = e.target.getElementsByTagName("button");
         if (this.toggle) {
