@@ -48,7 +48,7 @@
       </ul>
     </div>
 
-    <div class="text-center">
+    <div class="text-center mb-4">
 
       <div class="w-100 bg-light p-2 my-3" v-show="cart.length">
         <span>{{ t('total') }} <span>{{total}}</span>{{ t('currency') }}</span>
