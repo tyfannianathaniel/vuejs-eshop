@@ -20,7 +20,7 @@ const mutations = {
     state.items.splice(index, 1)
   },
 
-  incrementItemQuantity( state, { id } ) {
+  incrementItemQuantity( state, id ) {
     const item = state.items.find( item => item.id === id )
     item.quantity++
   },
@@ -46,7 +46,7 @@ const actions = {
       if ( !cartItem ) {
         commit('pushProductToCart', { id: product.id })
       } else  {
-        commit('incrementItemQuantity', cartItem)
+        commit('incrementItemQuantity', cartItem.id)
       }
       // remove 1 item from stock => API
     }
@@ -81,11 +81,11 @@ const getters = {
     })
   },
 
-  cartTotalPrice: ( getters ) => {
-    return getters.cartProducts.reduce( (total, product) => {
+  cartTotalPrice: (state, getters) => {
+    return getters.cartProducts.reduce((total, product) => {
       return total + product.price * product.quantity
     }, 0)
-  },
+  }
 
 }
 

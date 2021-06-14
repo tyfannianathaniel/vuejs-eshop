@@ -62,6 +62,9 @@ export default {
   #offcanvas {
     width: 520px !important;
   }
+  .offcanvas-body {
+    padding: 0 !important;
+  }
 </style>
 
 
