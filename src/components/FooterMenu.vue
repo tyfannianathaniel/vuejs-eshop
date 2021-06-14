@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row my-3">
         <section class="text-center col-sm-6">
             <div>
                 <p class="text-uppercase">À propos de MyShop</p>

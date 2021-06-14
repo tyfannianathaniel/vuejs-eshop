@@ -1,5 +1,5 @@
 <template>
-    <aside class="d-flex pb-3 justify-content-between ">
+    <aside class="d-flex pt-3 mb-3 justify-content-between ">
         <div>
             <p class="text-start"><span class="badge bg-secondary">{{total}}</span>{{ t('products') }}</p>
         </div>

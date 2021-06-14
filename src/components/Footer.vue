@@ -3,8 +3,10 @@
         <Reassurance />
         <Newsletter />
         <SocialMedia />
-        <Contact />
-        <FooterMenu />
+        <div class="sitcky-bottom bg-light position-absolute w-100 start-0 overflow-hidden">
+          <Contact />
+          <FooterMenu />
+        </div>
     </footer>
 </template>
 

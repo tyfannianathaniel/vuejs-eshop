@@ -1,5 +1,5 @@
 <template>
-    <section id="socialmedia" class="text-center">
+    <section id="socialmedia" class="py-3 my-3 text-center">
         <ul class="d-inline-flex list-unstyled">
             <li class="nav-item">
                 <router-link class="nav-link pe-0" to="#">
