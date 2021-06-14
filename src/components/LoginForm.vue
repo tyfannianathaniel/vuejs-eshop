@@ -10,14 +10,14 @@
       <!-- take a look: https://www.npmjs.com/package/vee-validate -->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">{{ t('email address') }}</label>
-        <input type="email" class="form-control" :placeholder="t('email placeholder')" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input name="email" type="email" class="form-control" :placeholder="t('email placeholder')" id="exampleInputEmail1" aria-describedby="emailHelp">
         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">{{ t('password') }}</label>
-        <input type="password" placeholder="••••••••" class="form-control" id="exampleInputPassword1">
+        <input name="password" type="password" placeholder="••••••••" class="form-control" id="exampleInputPassword1">
       </div>
-      <fieldset disabled>
+      <fieldset>
         <button type="submit" class="btn btn-primary">{{ t('log in button') }}</button>
       </fieldset>
     </form>
@@ -29,13 +29,18 @@
 import { useI18n } from 'vue-i18n';
 
 export default {
- setup() {
+  data() {
+    return {
+      filled: false,
+    }
+  },
+  setup() {
     const { t } = useI18n({
       inheritLocale: true,
       useScope: 'local'
     })
     return { t }
-  }
+  },
 }
 </script>
 

@@ -2,7 +2,7 @@
   <div class="text-center sidePanelForms my-5">
 
     <div class="pb-4">
-      <span class="lead ">{{ t("don't have an account yet") }}</span>
+      <div class="lead w-100">{{ t("don't have an account yet") }}</div>
       <button @click="displaySignIn" type="button" class="my-3 btn btn-primary">{{ t('create an account') }}</button>
     </div>
 
