@@ -13,6 +13,9 @@
                     <li>
                         <a class="text-decoration-none" href="#">Nous recrutons</a>
                     </li>
+                    <li>
+                        <a class="text-decoration-none" href="#">Nos CGV</a>
+                    </li>
                 </ul>
             </div>
         </section>

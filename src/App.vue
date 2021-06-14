@@ -1,9 +1,11 @@
 <template>
 
-  <div class="container">
-    <Header/>
-    <router-view class="my-3"/>
-    <Footer />
+  <div class="bg-light">
+      <Header/>
+    <div class="container my-5">
+      <router-view class="my-3"/>
+    </div>
+      <Footer />
   </div>
 
   <SidePanel/>

@@ -17,7 +17,7 @@
         <label for="exampleInputPassword1" class="form-label">{{ t('password') }}</label>
         <input name="password" type="password" placeholder="••••••••" class="form-control" id="exampleInputPassword1">
       </div>
-      <fieldset>
+      <fieldset >
         <button type="submit" class="btn btn-primary">{{ t('log in button') }}</button>
       </fieldset>
     </form>

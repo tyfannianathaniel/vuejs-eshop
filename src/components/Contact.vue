@@ -1,5 +1,5 @@
 <template>
-    <section class="py-3 my-3 text-center">
+    <section class="container py-3 my-3 text-center">
         <p>
             Nous appeler
             <a href="tel:+330100000000">(+33) 01 00 00 00 00</a>

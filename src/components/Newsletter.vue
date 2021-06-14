@@ -1,5 +1,5 @@
 <template>
-    <section id="newsletter" class="py-3 my-3 text-center">
+    <section id="newsletter" class="container py-3 my-3 text-center">
         <h2>Newsletter</h2>
         <p>Rejoignez-nous pour recevoir les nouveautés et bons plans.</p>
 

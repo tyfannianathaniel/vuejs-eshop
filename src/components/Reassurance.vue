@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-light rounded-pill w-100 my-5 p-3">
+    <section class="container bg-white rounded-pill w-100 my-5 p-3">
         <ul class="d-flex row text-center justify-content-between list-unstyled m-0 px-0 pb-0 pt-4">
               <li class="col-6 col-md-3">
                   <svg class="bi" width="21" height="21" fill="currentColor"><use xlink:href="assets/bootstrap-icons.svg#arrow-counterclockwise"/></svg>

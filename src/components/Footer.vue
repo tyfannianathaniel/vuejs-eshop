@@ -3,7 +3,7 @@
         <Reassurance />
         <Newsletter />
         <SocialMedia />
-        <div class="sitcky-bottom bg-light position-absolute w-100 start-0 overflow-hidden">
+        <div class="sitcky-bottom bg-white position-absolute w-100 start-0 overflow-hidden">
           <Contact />
           <FooterMenu />
         </div>
