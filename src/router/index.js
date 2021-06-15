@@ -36,12 +36,14 @@ const routes = [
         name: 'CartCheckout',
         component: () => import('@/components/Checkout/CartCheckout.vue'),
         beforeEnter: (to, from, next) => {
-          if (!isAuthenticated) next({ name: 'Login' })
-          else next()
+          // if (!isAuthenticated) next({ name: 'Login' })
+          // else next()
+          next()
         }
       },
       {
         path: 'address',
+        name: 'AddressCheckout',
         component: () => import('@/components/Checkout/ShippingDelivery.vue'),
         beforeEnter: (to, from, next) => {
           if (!isAuthenticated) next({ name: 'Login' })

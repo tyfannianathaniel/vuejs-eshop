@@ -1,10 +1,28 @@
 <template>
-  <p>shipping & delivery</p>
+  <form @submit.prevent="validate">
+    <h4>{{ t('shipping address') }}</h4>
+    <div>
+      <!-- TITLE : Mr Mrs-->
+    </div>
+    <div>
+      <!-- FIRST NAME / NAME -->
+    </div>
+  </form>
 </template>
 
 <script>
-export default {
 
+import { useI18n } from 'vue-i18n';
+
+export default {
+  name: 'ShippingDelivery',
+  setup() {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { t }
+  },
 }
 </script>
 

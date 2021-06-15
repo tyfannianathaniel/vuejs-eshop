@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex justify-content-end">
-    <form class="col-4">
+  <div class="d-flex justify-content-md-end justify-content-sm-center">
+    <form class="col-lg-4 col-sm" @submit.prevent="validate">
 
       <div class="mb-3">
 
@@ -9,25 +9,26 @@
           <option v-for="country of countries" :key="country.id" :value="country.iso_code" >{{ country.name }}</option>
         </select>
 
-        <div class="my-3 text-end table-responsive">
+        <!-- #refactor -->
+        <div class="my-3 text-lg-end table-responsive">
           <table class="table table-borderless">
             <tbody>
               <tr>
-                <td scope="row">{{ t('subtotal') }}</td>
-                <td><span>{{ subtotal }}</span></td>
+                <td class="text-start" scope="row">{{ t('subtotal') }}</td>
+                <td class="text-end"><span>{{ subtotal }}</span></td>
               </tr>
               <tr>
-                <td scope="row">{{ t('shipping') }}</td>
-                <td v-if="shipping" ><span>{{ shipping }}</span></td>
-                <td v-else          ><span>{{ t('offered') }}</span></td>
+                <td class="text-start" scope="row">{{ t('shipping') }}</td>
+                <td class="text-end" v-if="shipping" ><span>{{ shipping }}</span></td>
+                <td class="text-end" v-else          ><span class="text-uppercase">{{ t('offered') }}</span></td>
               </tr>
-              <tr>
-                <td scope="row">{{ t('total') }}</td>
-                <td><span>{{ subtotal + shipping }}</span></td>
+              <tr class="text-uppercase fw-bold fs-4 border-top border-bottom">
+                <td class="text-start" scope="row">{{ t('total') }}</td>
+                <td class="text-end"><span>{{ subtotal + shipping }}</span></td>
               </tr>
               <tr class="text-muted">
-                <td scope="row">{{ t('vat') }}</td>
-                <td><span>{{ vat.toFixed(2) }}</span></td>
+                <td class="text-start" scope="row">{{ t('vat') }}</td>
+                <td class="text-end"><span>{{ vat.toFixed(2) }}</span></td>
               </tr>
             </tbody>
           </table>
@@ -58,6 +59,11 @@ export default {
     })
     return { t }
   },
+  data() {
+    return {
+      showModal: false,
+    }
+  },
   created() {
     this.$store.dispatch("cartModule/FETCH_COUNTRIES")
   },
@@ -77,6 +83,17 @@ export default {
       return 17 / 100 * (this.subtotal + this.shipping)
     },
   },
+  methods: {
+    validate() {
+
+      // modal : https://codepen.io/team/Vue/pen/mdPoyvv?editors=1010
+
+      this.$store.state.userModule.isLoggedIn
+      ? this.$router.push({ name: 'AddressCheckout'})
+      : this.showModal = true
+
+    }
+  }
 }
 </script>
 
