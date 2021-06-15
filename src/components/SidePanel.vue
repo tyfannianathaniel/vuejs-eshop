@@ -18,16 +18,6 @@
                 <div class="tab-pane fade mt-5" id="offcanvas-tab-cart" role="tabpanel" aria-labelledby="cart-tab"><Cart/></div>
             </div>
         </div>
-        <div>
-            <!--
-                - ajouter au store un panier
-                - ajouter à cet onglet le nombre de produits dans le panier
-                - ajouter à cet onglet la liste des produits dans le panier
-                - ajouter à cet onglet un bouton 'finaliser mes achats'
-
-            -->
-
-        </div>
     </div>
     </div>
 </template>
@@ -38,19 +28,25 @@ import SignInFormGoto from '@/components/SignInFormGoto.vue'
 import Cart from '@/components/Cart.vue'
 import { useI18n } from 'vue-i18n';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
+
 export default {
-    components: {
-        LoginForm,
-        SignInFormGoto,
-        Cart,
-    },
-    setup() {
-      const { t } = useI18n({
-        inheritLocale: true,
-        useScope: 'local'
-      })
-      return { t }
-    },
+  name: "sidePanel",
+  components: {
+      LoginForm,
+      SignInFormGoto,
+      Cart,
+  },
+  setup() {
+
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+
+    return { t }
+  },
 }
 </script>
 

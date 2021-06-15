@@ -21,6 +21,6 @@ const langs = [
 
 export default {
   getLangs (cb) {
-      setTimeout( () => cb(langs), 1000)
+      setTimeout( () => cb(langs), 100)
   }
 }

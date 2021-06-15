@@ -1,5 +1,5 @@
 <template>
-    <aside class="d-flex pt-3 mb-3 justify-content-between ">
+    <aside class="d-flex bg-white rounded px-3 pt-3 mb-3 justify-content-between ">
         <div>
             <p class="text-start"><span class="badge bg-secondary">{{total}}</span>{{ t('products') }}</p>
         </div>
@@ -10,7 +10,7 @@
             </div>
             <div>
                 <form>
-                    <select @change="sortBy(event)" class="form-select form-select-sm" aria-label="select 'sort by' filter">
+                    <select @change="sortBy(event)" class="rounded-pill form-select form-select-sm" aria-label="select 'sort by' filter">
                         <option selected value="our-selection">{{ t('our selection') }}</option>
                         <option value="price-ascending">{{ t('ascending price') }}</option>
                         <option value="price-descending">{{ t('descending price') }}</option>

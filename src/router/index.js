@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
+const isAuthenticated = true;
+
 const routes = [
   {
     path: '/',
@@ -15,12 +17,56 @@ const routes = [
   {
     path: '/admin',
     name: 'Admin',
-    component: () => import('@/views/Admin.vue')
+    component: () => import('@/views/Admin.vue'),
+    beforeEnter: (to, from, next) => {
+        if (!isAuthenticated) next({ name: 'Login' })
+        else next()
+    }
   },
   {
     path: '/checkout',
     name: 'Checkout',
-    component: () => import('@/views/Checkout.vue')
+    component: () => import('@/views/Checkout.vue'),
+    children: [
+      {
+        path: '',
+        redirect: { name: 'CartCheckout' },
+      },      {
+        path: '/order',
+        name: 'CartCheckout',
+        component: () => import('@/components/Checkout/CartCheckout.vue'),
+        beforeEnter: (to, from, next) => {
+          if (!isAuthenticated) next({ name: 'Login' })
+          else next()
+        }
+      },
+      {
+        path: 'address',
+        component: () => import('@/components/Checkout/ShippingDelivery.vue'),
+        beforeEnter: (to, from, next) => {
+          if (!isAuthenticated) next({ name: 'Login' })
+          else next()
+        }
+
+      },
+      {
+        path: 'payment',
+        component: () => import('@/components/Checkout/BillingPayment.vue'),
+        beforeEnter: (to, from, next) => {
+          if (!isAuthenticated) next({ name: 'Login' })
+          else next()
+        }
+      },
+    ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/components/LoginForm.vue'),
+    beforeEnter: (to, from, next) => {
+      if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
+      else next('/')
+    }
   },
   {
     path: '/products/:id',

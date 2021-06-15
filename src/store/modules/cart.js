@@ -1,6 +1,9 @@
+import api from '@/api/countries'
+
 const state = {
 
   items: [],
+  countries: []
 
 }
 
@@ -34,6 +37,10 @@ const mutations = {
     state.items = data
   },
 
+  setCountries( state, data ) {
+    state.countries = data
+  }
+
 }
 
 // ---------------------------
@@ -50,6 +57,17 @@ const actions = {
       }
       // remove 1 item from stock => API
     }
+  },
+
+  FETCH_COUNTRIES({ commit }) {
+    return new Promise(
+      function ( resolve ) {
+        api.getCountries( data => {
+          commit( 'setCountries', data )
+          resolve()
+        })
+      }
+    )
   },
 
   decrementCheck( {state, commit }, id) {
