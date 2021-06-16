@@ -1,6 +1,5 @@
 <template>
   <section class="mb-5">
-    <h1>This is a product page. Product ID: {{$route.params.id}}</h1>
     <div class="row">
 
       <!-- Div photos -->
@@ -11,7 +10,7 @@
           <figure class="view main-img">
             <a href="#"
               data-size="710x823">
-              <img src="../../public/assets/images/placeholder.png"
+              <img src="../../public/assets/images/t-shirt-100-coton-fitness-sportee-noir.webp"
                 class="img-fluid ">
             </a>
           </figure>
@@ -55,12 +54,10 @@
       <!-- Div de présentation -->
       <div class="col-md-6">
 
-        <h5>Veste en jean Noir</h5>
+        <h5>T-Shirt 100% Coton Fitness Sportee Noir</h5>
         <p class="mb-2 text-muted text-uppercase small">Shirts</p>
-        <p><span class="mr-1"><strong>12.99€</strong></span></p>
-        <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-          error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-          officia quis dolore quos sapiente tempore alias.</p>
+        <p><span class="mr-1"><strong>22€</strong></span></p>
+        <p class="pt-1">C'est le t-shirt basique par excellence, simple et efficace, qui trouve forcément sa place dans votre dressing de sportif… ou dans la vie de tous les jours</p>
         <div class="table-responsive">
           <table class="table table-sm table-borderless mb-0">
             <tbody>
@@ -92,18 +89,18 @@
                 <td>
                   <div class="mt-1">
                     <div class="form-check form-check-inline pl-0">
-                      <input type="radio" class="form-check-input" id="small" name=""
+                      <input type="radio" class="form-check-input" id="small" name="size"
                         checked>
                       <label class="form-check-label small text-uppercase card-link-secondary"
                         for="small">Small</label>
                     </div>
                     <div class="form-check form-check-inline pl-0">
-                      <input type="radio" class="form-check-input" id="medium" name="">
+                      <input type="radio" class="form-check-input" id="medium" name="size">
                       <label class="form-check-label small text-uppercase card-link-secondary"
                         for="medium">Medium</label>
                     </div>
                     <div class="form-check form-check-inline pl-0">
-                      <input type="radio" class="form-check-input" id="large" name="">
+                      <input type="radio" class="form-check-input" id="large" name="size">
                       <label class="form-check-label small text-uppercase card-link-secondary"
                         for="large">Large</label>
                     </div>
