@@ -3,7 +3,7 @@
 
     <div class="pb-4">
       <div class="lead w-100">{{ t("don't have an account yet") }}</div>
-      <router-link to="/register" @click="displaySignIn" type="button" class="my-3 btn btn-primary">{{ t('create an account') }}</router-link>
+      <router-link data-bs-dismiss="offcanvas" to="/register" @click="displaySignIn" type="button" class="my-3 btn btn-primary">{{ t('create an account') }}</router-link>
     </div>
 
   </div>
