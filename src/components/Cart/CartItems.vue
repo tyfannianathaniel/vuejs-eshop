@@ -68,22 +68,22 @@ export default {
   },
   computed: {
     cart(){
-      return this.$store.getters['cartModule/cartProducts']
+      return this.$store.getters['cart/cartProducts']
     },
   },
   methods: {
     concatImgSrc(product) {
       return `./assets/images/${product.images[0].filename}`;
     },
-    ...mapMutations( 'cartModule', [
+    ...mapMutations( 'cart', [
       'incrementItemQuantity',
       'spliceProductFromCart'
     ]),
-    ...mapActions( 'cartModule', [
+    ...mapActions( 'cart', [
       'decrementCheck',
     ]),
     decrementItemQuantity(id) {
-      // this.$store.dispatch("cartModule/decrementCheck")
+      // this.$store.dispatch("cart/decrementCheck")
       this.decrementCheck(id)
     },
     removeFromCart(id) {

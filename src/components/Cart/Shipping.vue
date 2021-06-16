@@ -65,14 +65,14 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch("cartModule/FETCH_COUNTRIES")
+    this.$store.dispatch("cart/FETCH_COUNTRIES")
   },
   computed: {
     countries() {
-      return this.$store.state.cartModule.countries
+      return this.$store.state.cart.countries
     },
     subtotal() {
-      return this.$store.getters['cartModule/cartTotalPrice']
+      return this.$store.getters['cart/cartTotalPrice']
     },
     shipping() {
       // not implemented yet

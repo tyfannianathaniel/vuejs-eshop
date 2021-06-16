@@ -40,8 +40,8 @@ export default {
     }
   },
   created() {
-    if (this.$store.state.productsModule.isLoading) {
-      this.$store.dispatch("productsModule/FETCH_PRODUCTS").then( () => this.isLoading = false)
+    if (this.$store.state.products.isLoading) {
+      this.$store.dispatch("products/FETCH_PRODUCTS").then( () => this.isLoading = false)
     } else {
       this.isLoading = false
     }

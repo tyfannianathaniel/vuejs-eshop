@@ -28,7 +28,7 @@ export default {
     name:'Bestsellers',
     computed: {
       products(){
-          return this.$store.getters['productsModule/isBestseller']
+          return this.$store.getters['products/isBestseller']
       }
     },
     methods: {

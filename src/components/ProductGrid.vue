@@ -68,9 +68,9 @@ export default {
         let products =[]
 
         if (this.isAvailable) {
-            products = this.$store.getters['productsModule/getAvailableProducts']
+            products = this.$store.getters['products/getAvailableProducts']
         } else {
-            products = this.$store.state.productsModule.products
+            products = this.$store.state.products.products
         }
 
         switch (this.filter) {
@@ -89,12 +89,12 @@ export default {
     },
     methods: {
 
-      ...mapActions( 'cartModule', [
+      ...mapActions( 'cart', [
         'ADD_PRODUCT_TO_CART'
       ]),
 
       ...mapState({
-        products: state => state.productsModule.products
+        products: state => state.products.products
       }),
 
       addToCart(product) {

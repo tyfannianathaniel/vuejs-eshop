@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     cart(){
-      return this.$store.getters['cartModule/cartProducts']
+      return this.$store.getters['cart/cartProducts']
     },
   },
   methods: {

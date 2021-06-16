@@ -126,7 +126,7 @@ export default {
   name:'Products',
   computed: {
     product(){
-      return this.$store.state.productsModule.products
+      return this.$store.state.products.products
     }
   }
 }

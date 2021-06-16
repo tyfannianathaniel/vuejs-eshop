@@ -11,11 +11,11 @@ export default {
   name:'Multilang',
   computed: {
     langs() {
-      return this.$store.state.langsModule.langs
+      return this.$store.state.langs.langs
     },
   },
   created(){
-    this.$store.dispatch("langsModule/FETCH_LANGS")
+    this.$store.dispatch("langs/FETCH_LANGS")
   }
 }
 </script>

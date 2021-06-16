@@ -1,15 +1,21 @@
 import { createStore } from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
-import cartModule from './modules/cart'
-import langsModule from './modules/langs'
-import productsModule from './modules/products'
-import userModule from './modules/user'
+import cart from './modules/cart'
+import langs from './modules/langs'
+import products from './modules/products'
+import user from './modules/user'
+import auth from './modules/auth'
 
 export default createStore({
   modules: {
-    cartModule,
-    langsModule,
-    productsModule,
-    userModule
+    cart,
+    langs,
+    products,
+    user,
+    auth,
   },
+  plugins: [
+    createPersistedState()
+  ],
 })

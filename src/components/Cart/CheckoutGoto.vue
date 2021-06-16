@@ -27,7 +27,7 @@ export default {
   methods: {
     checkout() {
       // call store checkout action
-      // this.$store.dispatch('cartModule/checkout')
+      // this.$store.dispatch('cart/checkout')
     }
   }
 }

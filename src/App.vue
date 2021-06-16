@@ -27,7 +27,7 @@ export default {
     SearchBar,
   },
   created(){
-      this.$store.dispatch("productsModule/FETCH_PRODUCTS")
+      this.$store.dispatch("products/FETCH_PRODUCTS")
   }
 }
 </script>

@@ -14,7 +14,14 @@
                 </li>
             </ul>
             <div class="tab-content" id="overlay-tab-content">
-                <div class="tab-pane fade mt-5" id="offcanvas-tab-account" role="tabpanel" aria-labelledby="account-tab"><LoginForm/><SignInFormGoto/></div>
+                <div class="tab-pane fade mt-5" id="offcanvas-tab-account" role="tabpanel" aria-labelledby="account-tab">
+                  <div v-if="isLoggedIn">
+                    <UserAccount/>
+                  </div>
+                  <div v-else>
+                    <LoginForm/><SignInFormGoto/>
+                  </div>
+                </div>
                 <div class="tab-pane fade mt-5" id="offcanvas-tab-cart" role="tabpanel" aria-labelledby="cart-tab"><Cart/></div>
             </div>
         </div>
@@ -25,17 +32,20 @@
 <script>
 import LoginForm from '@/components/LoginForm.vue'
 import SignInFormGoto from '@/components/SignInFormGoto.vue'
+import UserAccount from '@/components/User/Account.vue'
 import Cart from '@/components/Cart.vue'
+
 import { useI18n } from 'vue-i18n';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap";
 
 export default {
   name: "sidePanel",
   components: {
       LoginForm,
       SignInFormGoto,
+      UserAccount,
       Cart,
   },
   setup() {
@@ -47,6 +57,9 @@ export default {
 
     return { t }
   },
+  computed: {
+    isLoggedIn() { return true}
+  }
 }
 </script>
 
