@@ -1,4 +1,4 @@
-import api from '@/api/langs'
+import api from '@/services/api/langs'
 
 const state = {
 

@@ -38,8 +38,8 @@ export default {
     }
   },
   methods: {
-    async logout() {
-      await this.store.dispatch('auth/LOGOUT')
+    logout() {
+      this.$store.dispatch('auth/LOGOUT')
       // could it be sync since it calls an async action?
     }
   }
