@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const state = {
-  user: true,
+  user: null,
 }
 
 // ---------------------------
@@ -17,7 +17,7 @@ const actions = {
 
   async REGISTER( {dispatch}, form ) {
 
-    await axios.post('register', form)
+    await axios.post('customer', form)
     const UserForm = new FormData()
     UserForm.append('username', form.username)
     UserForm.append('password', form.password)

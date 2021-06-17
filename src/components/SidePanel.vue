@@ -58,7 +58,7 @@ export default {
     return { t }
   },
   computed: {
-    isLoggedIn() { return true}
+    isLoggedIn() { return this.$store.getters['auth/isAuthenticated']}
   }
 }
 </script>
