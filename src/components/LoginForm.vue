@@ -8,12 +8,12 @@
 
     <form>
       <!-- take a look: https://www.npmjs.com/package/vee-validate -->
-      <div class="mb-3">
+      <div class="mb-3 mx-lg-auto col-lg-6">
         <label for="exampleInputEmail1" class="form-label">{{ t('email address') }}</label>
         <input name="email" type="email" class="form-control" :placeholder="t('email placeholder')" id="exampleInputEmail1" aria-describedby="emailHelp">
         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
       </div>
-      <div class="mb-3">
+      <div class="mb-3 mx-lg-auto col-lg-6">
         <label for="exampleInputPassword1" class="form-label">{{ t('password') }}</label>
         <input name="password" type="password" placeholder="••••••••" class="form-control" id="exampleInputPassword1">
       </div>

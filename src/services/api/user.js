@@ -16,4 +16,32 @@ export default {
   getUserByEmail(_email) {
     return users.find( ({ email }) => email === _email )
   },
+  createUser(user) {
+
+    let _user = {
+      "id_customer": users.length + 1,
+      "firstname": user.firstname,
+      "lastname": user.lastname,
+      "email": user.email,
+      "passwd": user.password,
+      "birthday": user.birthday
+    }
+
+    let body = null
+    let init = null
+    let res = new Response(body, init)
+
+    if(user.password !== user.passwordConfirm) {
+      init = { "status": 400}
+      return res
+    }
+
+    users.push(_user)
+
+    body = _user
+    init = { "status": 200}
+
+    return res
+
+  },
 }

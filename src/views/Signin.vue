@@ -1,10 +1,16 @@
 <template>
-
+  <SignInForm/>
 </template>
 
 <script>
+import SignInForm from '@/components/SignInForm.vue'
+import { useI18n } from 'vue-i18n';
+
 export default {
-  name: "SignIn",
+  name: "LogIn",
+  components: {
+    SignInForm
+  },
   setup() {
 
     const { t } = useI18n({

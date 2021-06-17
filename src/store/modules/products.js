@@ -1,4 +1,4 @@
-import api from '@/api/products'
+import api from '@/services/api/products'
 
 // ---------------------------
 

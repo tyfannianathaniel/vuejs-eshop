@@ -5,7 +5,7 @@ import store from './store'
 import axios from 'axios';
 
 axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'localhost:3000'
+axios.defaults.baseURL = 'http://localhost:3000'
 
 // Bootstrap 5
 import "bootstrap/dist/css/bootstrap.min.css";

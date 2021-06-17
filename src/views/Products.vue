@@ -1,5 +1,6 @@
 <template>
   <section class="mb-5">
+    <h1 class="fs-4 mb-5">Eskal</h1>
     <div class="row">
 
       <!-- Div photos -->
@@ -10,7 +11,7 @@
           <figure class="view main-img">
             <a href="#"
               data-size="710x823">
-              <img src="../../public/assets/images/t-shirt-100-coton-fitness-sportee-noir.webp"
+              <img src="../assets/images/t-shirt-descalade-vertika-homme-bordeaux.webp"
                 class="img-fluid ">
             </a>
           </figure>
@@ -54,20 +55,20 @@
       <!-- Div de présentation -->
       <div class="col-md-6">
 
-        <h5>T-Shirt 100% Coton Fitness Sportee Noir</h5>
+        <h5>T-Shirt D'Escalade Coton Homme Bordeaux</h5>
         <p class="mb-2 text-muted text-uppercase small">Shirts</p>
-        <p><span class="mr-1"><strong>22€</strong></span></p>
-        <p class="pt-1">C'est le t-shirt basique par excellence, simple et efficace, qui trouve forcément sa place dans votre dressing de sportif… ou dans la vie de tous les jours</p>
+        <p><span class="mr-1"><strong>22 €</strong></span></p>
+        <p class="pt-1">Développé avec notre team de grimpeurs, pour assurer votre confort, que vous grimpiez sans relâche ou que vous assuriez au pied de la voie.</p>
         <div class="table-responsive">
           <table class="table table-sm table-borderless mb-0">
             <tbody>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Marque</strong></th>
-                <td>Byamba</td>
+                <td>Eskal</td>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Couleur</strong></th>
-                <td>Noir</td>
+                <td>Bordeaux</td>
               </tr>
             </tbody>
           </table>
@@ -110,8 +111,13 @@
             </tbody>
           </table>
         </div>
-        <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
-            class="pr-2"></i>Ajouter au panier</button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          to="#"
+        >
+          Ajouter au panier
+        </button>
       </div>
     </div>
 
