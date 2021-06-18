@@ -11,7 +11,7 @@
           <figure class="view main-img">
             <a href="#"
               data-size="710x823">
-              <img src="../assets/images/t-shirt-descalade-vertika-homme-bordeaux.webp"
+              <img src="../assets/t-shirt-descalade-vertika-homme-bordeaux.webp"
                 class="img-fluid ">
             </a>
           </figure>
