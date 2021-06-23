@@ -13,7 +13,7 @@
               :src="concatImgSrc(product)"
               :alt="product.images[0].alt"
               class="rounded-start h-100 img-fluid"
-              style="max-width: 200px;"/>
+              style="width: 200px;"/>
           </div>
 
           <div class="card-body position-relative">
